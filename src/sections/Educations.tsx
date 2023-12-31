@@ -5,9 +5,7 @@ import { CareerItem } from "./Layout";
 export default function Educations(props: any) {
   return (
     <Flex gap={4} direction={"column"} {...props}>
-      <Heading as="h1" color={"green"}>
-        Educations
-      </Heading>
+      <Heading as="h1">Educations</Heading>
       <List gap={4} display={"flex"} flexDir={"column"}>
         {educations.map((education, index) => (
           <CareerItem career={education} key={`edu${index}`} />

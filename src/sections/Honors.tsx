@@ -5,9 +5,7 @@ import { honors } from "@/data/honors";
 export default function Honors(props: any) {
   return (
     <Flex gap={4} direction={"column"} {...props}>
-      <Heading as="h1" color={"green"}>
-        Honors & Awards
-      </Heading>
+      <Heading as="h1">Honors & Awards</Heading>
       <List gap={4} display={"flex"} flexDir={"column"}>
         {honors.map((award, index) => (
           <CareerItem career={award} key={`award${index}`} />

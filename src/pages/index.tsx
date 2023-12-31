@@ -2,6 +2,7 @@ import { Image, Link } from "@chakra-ui/next-js";
 import {
   Box,
   Button,
+  CardProps,
   Collapse,
   Container,
   Flex,
@@ -11,6 +12,9 @@ import {
   List,
   ListItem,
   Text,
+  useColorMode,
+  useColorModeValue,
+  useStyleConfig,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import NextImage from "next/image";
@@ -26,27 +30,17 @@ import Honors from "@/sections/Honors";
 import Publications from "@/sections/Publications";
 import NextLink from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { PRIMARY_COLOR } from "./_theme";
 type SocialButtonProps = {
   href: string;
   icon: any;
 };
-const Section = (props: FlexProps) => (
-  <Flex
-    p={{
-      base: 4,
-      md: 8,
-    }}
-    gap={2}
-    borderRadius={16}
-    bgColor={"white"}
-    boxShadow={"xs"}
-    w={"full"}
-    flexDir={"column"}
-    {...props}
-  >
-    {props.children}
-  </Flex>
-);
+
+function Card(props: CardProps) {
+  const { variant, ...rest } = props;
+  const styles = useStyleConfig("Card", { variant });
+  return <Box __css={styles} {...rest} />;
+}
 
 const NavigationItem = (props: any) => (
   <Button
@@ -59,7 +53,7 @@ const NavigationItem = (props: any) => (
       md: "flex-start",
     }}
     variant={props.selected ? "solid" : "ghost"}
-    colorScheme={props.selected ? "green" : "gray"}
+    colorScheme={props.selected ? PRIMARY_COLOR : "gray"}
     onClick={props.onClick}
   >
     {props.children}
@@ -70,7 +64,7 @@ function SocialButton({ href, icon }: SocialButtonProps) {
   return (
     <ListItem>
       <Link as={NextLink} isExternal href={href}>
-        <Button p={1} variant={"ghost"}>
+        <Button p={1} variant={"ghost"} colorScheme="gray">
           <Icon as={icon} />
         </Button>
       </Link>
@@ -80,11 +74,14 @@ function SocialButton({ href, icon }: SocialButtonProps) {
 
 function Header(props: FlexProps) {
   return (
-    <Section
-      align={"center"}
+    <Card
       flexDir={{
         base: "row",
         md: "column",
+      }}
+      alignItems={{
+        base: "flex-start",
+        md: "center",
       }}
       gap={4}
       p={4}
@@ -116,10 +113,10 @@ function Header(props: FlexProps) {
             md: 0,
           }}
         >
-          <Heading as="h1" fontSize={24}>
+          <Text fontWeight={700} fontSize={24}>
             Jiwon Choi
-          </Heading>
-          <Text mx={1}>{"Jason Choi, 최지원"}</Text>
+          </Text>
+          <Text>{"Jason Choi, 최지원"}</Text>
         </Flex>
 
         <List
@@ -136,7 +133,14 @@ function Header(props: FlexProps) {
           ))}
         </List>
       </Flex>
-    </Section>
+    </Card>
+  );
+}
+
+function isDesktop() {
+  return (
+    window.innerWidth >
+    parseFloat(getComputedStyle(document.querySelector("body")!).fontSize) * 48
   );
 }
 
@@ -144,11 +148,12 @@ export default function Index() {
   const [currentSection, setCurrentSection] = useState(0);
   const sectionRef = useRef<HTMLDivElement[]>([]);
   const [isOpen, setIsOpen] = useState(true);
+  const { toggleColorMode } = useColorMode();
 
   function collapseHandler() {
-    if (isOpen && window.scrollY > 65) {
+    if (isOpen && window.scrollY > 57) {
       setIsOpen(false);
-    } else if (window.scrollY < 65) {
+    } else if (window.scrollY < 57) {
       setIsOpen(true);
     }
   }
@@ -236,10 +241,9 @@ export default function Index() {
               }}
             />
           </Collapse>
-          <Section
+          <Card
             p={3}
             px={isOpen ? 3 : 5}
-            bgColor={isOpen ? "white" : "gray.50"}
             boxShadow={isOpen ? "xs" : "none"}
             borderRadius={isOpen ? 16 : 0}
           >
@@ -262,7 +266,7 @@ export default function Index() {
                 </NavigationItem>
               ))}
             </List>
-          </Section>
+          </Card>
         </Flex>
         <Flex
           py={{
@@ -272,7 +276,7 @@ export default function Index() {
           px={2}
           position={"static"}
         >
-          <Section gap={8}>
+          <Card gap={8}>
             {sections.map(({ id, Component }) => (
               <Box
                 key={id}
@@ -284,11 +288,21 @@ export default function Index() {
                 <Component />
               </Box>
             ))}
-          </Section>
+          </Card>
         </Flex>
       </Flex>
       <Text w={"full"} fontSize="xs" align={"center"} color={"gray"} my={4}>
         Copyright © 2023 Jiwon Jason Choi. All Rights Reserved.
+      </Text>
+      <Text
+        w={"full"}
+        fontSize="xs"
+        align={"center"}
+        color={"gray"}
+        my={4}
+        onClick={toggleColorMode}
+      >
+        Toggle Color Mode
       </Text>
     </Container>
   );

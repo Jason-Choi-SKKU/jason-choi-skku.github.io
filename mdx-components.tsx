@@ -9,11 +9,7 @@ import type { MDXComponents } from "mdx/types";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
-    h1: ({ children }) => (
-      <Heading as="h1" color="green">
-        {children}
-      </Heading>
-    ),
+    h1: ({ children }) => <Heading as="h1">{children}</Heading>,
     p: ({ children }) => (
       <Text as={"p"} fontSize={"lg"} lineHeight={2} textAlign={"left"}>
         {children}

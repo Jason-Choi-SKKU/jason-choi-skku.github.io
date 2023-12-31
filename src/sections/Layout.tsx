@@ -1,3 +1,4 @@
+import { PRIMARY } from "@/pages/_theme";
 import {
   Flex,
   FlexProps,
@@ -30,18 +31,7 @@ export const CareerItem = (props: CareerItemProps, key: string) => (
         md: "80px",
       }}
     >
-      <Highlight
-        query={"Present"}
-        styles={{
-          bgColor: "green.100",
-          color: "green.800",
-          fontWeight: 600,
-          p: 1,
-          rounded: "md",
-        }}
-      >
-        {props.career.date}
-      </Highlight>
+      <Highlight query={"Present"}>{props.career.date}</Highlight>
     </Text>
 
     <Flex direction={"column"}>

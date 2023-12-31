@@ -1,18 +1,17 @@
+import { authors } from "@/data/authors";
+import { publications } from "@/data/publications";
 import {
+  Button,
+  ButtonGroup,
   Flex,
   Heading,
-  Highlight,
+  Icon,
+  Link,
   List,
   ListItem,
   Text,
-  Link,
-  Button,
-  Icon,
-  FlexProps,
-  ButtonGroup,
 } from "@chakra-ui/react";
-import { publications } from "@/data/publications";
-import { authors } from "@/data/authors";
+import NextLink from "next/link";
 import {
   FaFilePdf,
   FaGithub,
@@ -20,7 +19,6 @@ import {
   FaVideo,
   FaVolumeHigh,
 } from "react-icons/fa6";
-import NextLink from "next/link";
 function AuthorNames({ authorNames }: { authorNames: string[] }) {
   return (
     <Text>
@@ -58,7 +56,6 @@ function PubButton({ href, icon, children }: any) {
         p={0}
         size={"xs"}
         leftIcon={<Icon as={icon} />}
-        colorScheme={"green"}
         zIndex={0}
       >
         {children}
@@ -118,9 +115,7 @@ function PubItem(props: any, key: string) {
 export default function Publications(props: any, key: string) {
   return (
     <Flex gap={4} direction={"column"} {...props}>
-      <Heading as="h1" color={"green"}>
-        Publications
-      </Heading>
+      <Heading as="h1">Publications</Heading>
       <List gap={4} display={"flex"} flexDir={"column"}>
         {publications.map((pub, index) => (
           <PubItem pub={pub} key={`pub${index}`} />
