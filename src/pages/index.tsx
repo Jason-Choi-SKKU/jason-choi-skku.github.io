@@ -2,7 +2,6 @@ import { Image, Link } from "@chakra-ui/next-js";
 import {
   Box,
   Button,
-  Center,
   Collapse,
   Container,
   Flex,
@@ -11,9 +10,7 @@ import {
   Icon,
   List,
   ListItem,
-  ListItemProps,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import NextImage from "next/image";
@@ -23,12 +20,12 @@ import { navigations } from "@/data/navigations";
 import { socials } from "@/data/socials";
 
 import About from "@/sections/About";
-import Honors from "@/sections/Honors";
 import Educations from "@/sections/Educations";
 import Experiences from "@/sections/Experiences";
+import Honors from "@/sections/Honors";
 import Publications from "@/sections/Publications";
-import { useRef, useState, useEffect } from "react";
 import NextLink from "next/link";
+import { useEffect, useRef, useState } from "react";
 type SocialButtonProps = {
   href: string;
   icon: any;
@@ -101,7 +98,7 @@ function Header(props: FlexProps) {
         overflow={"hidden"}
         borderRadius={"100%"}
       >
-        <Image as={NextImage} src={me} alt="Jiwon Choi" />
+        <Image as={NextImage} src={me} alt="Jiwon Choi" placeholder="blur" />
       </Box>
       <Flex flexDir="column">
         <Flex
@@ -119,8 +116,10 @@ function Header(props: FlexProps) {
             md: 0,
           }}
         >
-          <Heading as="h1">Jason Choi</Heading>
-          <Text mx={1}>{"Jiwon Choi, 최지원"}</Text>
+          <Heading as="h1" fontSize={24}>
+            Jiwon Choi
+          </Heading>
+          <Text mx={1}>{"Jason Choi, 최지원"}</Text>
         </Flex>
 
         <List
@@ -239,6 +238,7 @@ export default function Index() {
           </Collapse>
           <Section
             p={3}
+            px={isOpen ? 3 : 5}
             bgColor={isOpen ? "white" : "gray.50"}
             boxShadow={isOpen ? "xs" : "none"}
             borderRadius={isOpen ? 16 : 0}
@@ -287,6 +287,9 @@ export default function Index() {
           </Section>
         </Flex>
       </Flex>
+      <Text w={"full"} fontSize="xs" align={"center"} color={"gray"} my={4}>
+        Copyright © 2023 Jiwon Jason Choi. All Rights Reserved.
+      </Text>
     </Container>
   );
 }
