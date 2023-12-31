@@ -1,0 +1,100 @@
+export const honors: EntityType[] = [
+  {
+    title: "Shim-San Scholarship",
+    date: "Dec. 2023",
+    role: "",
+    url: "",
+    description:
+      "Selected as a recipient of the Shim-San Scholarship for the 2023 Fall by Dept. of CSE",
+  },
+  {
+    title: "SKKU Graduate School Scholarship",
+    date: "Sep. 2023 - Aug. 2025",
+    role: "",
+    url: "",
+    description:
+      "Stipended of $7,000 per year for selected new graduate students in SKKU.",
+  },
+  {
+    title: "SPARCS Startup Hackathon",
+    date: "Jan. 2023",
+    location: "1st Place",
+    description: "CloZ: Natural Language Guided Clothing Design System",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2022 SKKU College of Education AI-SW Capstone Design Contest",
+    date: "Dec. 2022",
+    location: "3rd Place",
+    description: "ELLmo: Deep-Learning-Based English Learning Feedback System",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2022 SKKU AI-Education Hackathon",
+    date: "Sep. 2022",
+    location: "1st Place",
+    description:
+      "VACode: A Visual Analytics Systems for Learner-Sourced Code in Large-Scale Computer Science Education",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2022 Graffiti Startup Hackathon",
+    date: "Jan. 2022",
+    location: "3rd Place",
+    description:
+      "Proposed research for data-driven startup improvement direction.",
+    url: "",
+    role: "",
+  },
+  {
+    title: "Monothon Hackathon",
+    date: "Jan. 2022",
+    location: "1st Place",
+    description: "GeulJari: Personal Diary with Sentiment Visualization",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2021 SKKU College of Education AI-SW Capstone Design Contest",
+    date: "Dec. 2021",
+    location: "3rd Place",
+    description: "GIMD2: Gesture Interaction for Multi-Dimensional Data",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2021 KIISE Fall Conference Idea Hackathon",
+    date: "Oct. 2021",
+    location: "3rd Place",
+    description:
+      "Proposed idea of deep learning based pronunciation correction assistant for articulation disorders.",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2021 SKKU AI-Education Hackathon",
+    date: "Sep. 2021",
+    location: "2nd Place",
+    description: "MILK: The Most Innovative Way to Learn Korean",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2020 KSIE 4th Industrial Revolution Contest",
+    date: "Nov. 2020",
+    location: "3rd Place",
+    url: "",
+    role: "",
+  },
+  {
+    title: "Seongdong Gifted Institute for Computer Science Contest",
+    date: "Oct. 2012",
+    location: "1st Place",
+    description: "Designed and developed personal dashboard system.",
+    url: "",
+    role: "",
+  },
+];
