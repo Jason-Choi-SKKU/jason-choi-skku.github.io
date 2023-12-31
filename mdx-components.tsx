@@ -15,7 +15,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </Text>
     ),
-    a: (props) => <a style={{ color: "red" }} {...props} />,
     ...components,
   };
 }

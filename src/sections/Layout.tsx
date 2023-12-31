@@ -1,4 +1,4 @@
-import { PRIMARY } from "@/pages/_theme";
+import { PRIMARY } from "@/theme";
 import {
   Flex,
   FlexProps,

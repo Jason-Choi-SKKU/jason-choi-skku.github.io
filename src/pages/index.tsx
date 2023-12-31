@@ -3,11 +3,9 @@ import {
   Box,
   Button,
   CardProps,
-  Collapse,
   Container,
   Flex,
   FlexProps,
-  Heading,
   Icon,
   List,
   ListItem,
@@ -29,8 +27,8 @@ import Experiences from "@/sections/Experiences";
 import Honors from "@/sections/Honors";
 import Publications from "@/sections/Publications";
 import NextLink from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { PRIMARY_COLOR } from "./_theme";
+import { use, useEffect, useRef, useState } from "react";
+import { PRIMARY_COLOR } from "../theme";
 type SocialButtonProps = {
   href: string;
   icon: any;
@@ -45,7 +43,7 @@ function Card(props: CardProps) {
 const NavigationItem = (props: any) => (
   <Button
     size={{
-      base: "sm",
+      base: "xs",
       md: "md",
     }}
     justifyContent={{
@@ -72,130 +70,82 @@ function SocialButton({ href, icon }: SocialButtonProps) {
   );
 }
 
-function Header(props: FlexProps) {
-  return (
-    <Card
-      flexDir={{
-        base: "row",
-        md: "column",
-      }}
-      alignItems={{
-        base: "flex-start",
-        md: "center",
-      }}
-      gap={4}
-      p={4}
-      {...props}
-    >
-      <Box
-        w={{
-          base: "100px",
-          md: "120px",
-        }}
-        overflow={"hidden"}
-        borderRadius={"100%"}
-      >
-        <Image as={NextImage} src={me} alt="Jiwon Choi" placeholder="blur" />
-      </Box>
-      <Flex flexDir="column">
-        <Flex
-          mx={2}
-          flexDir={{
-            base: "column",
-            md: "column",
-          }}
-          align={{
-            base: "flex-start",
-            md: "center",
-          }}
-          gap={{
-            base: 0,
-            md: 0,
-          }}
-        >
-          <Text fontWeight={700} fontSize={24}>
-            Jiwon Choi
-          </Text>
-          <Text>{"Jason Choi, 최지원"}</Text>
-        </Flex>
-
-        <List
-          w={"full"}
-          orientation={"horizontal"}
-          justifyContent={{
-            base: "left",
-            md: "space-evenly",
-          }}
-          display={"flex"}
-        >
-          {socials.map((social) => (
-            <SocialButton key={social.href} {...social} />
-          ))}
-        </List>
-      </Flex>
-    </Card>
-  );
-}
-
-function isDesktop() {
-  return (
-    window.innerWidth >
-    parseFloat(getComputedStyle(document.querySelector("body")!).fontSize) * 48
-  );
-}
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    setIsDesktop(
+      window.innerWidth >
+        parseFloat(getComputedStyle(document.querySelector("body")!).fontSize) *
+          48
+    );
+    window.addEventListener("resize", () => {
+      setIsDesktop(
+        window.innerWidth >
+          parseFloat(
+            getComputedStyle(document.querySelector("body")!).fontSize
+          ) *
+            48
+      );
+    });
+  }, []);
+  return isDesktop;
+};
 
 export default function Index() {
   const [currentSection, setCurrentSection] = useState(0);
+  const headerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement[]>([]);
   const [isOpen, setIsOpen] = useState(true);
   const { toggleColorMode } = useColorMode();
-
-  function collapseHandler() {
-    if (isOpen && window.scrollY > 57) {
-      setIsOpen(false);
-    } else if (window.scrollY < 57) {
-      setIsOpen(true);
-    }
-  }
-
-  function resizeHandler() {
-    if (
-      window.innerWidth <
-      parseFloat(getComputedStyle(document.querySelector("body")!).fontSize) *
-        48
-    ) {
-      window.addEventListener("scroll", collapseHandler);
-    } else {
-      window.removeEventListener("scroll", collapseHandler);
-    }
-  }
+  const isDesktop = useIsDesktop();
+  const bgColor = useColorModeValue("gray.100", "gray.900");
+  const sectionColor = useColorModeValue("white", "gray.800");
 
   useEffect(() => {
     const handleScroll = () => {
       const sectionIdx = sectionRef.current.findIndex((ref) => {
         if (!ref) return false;
         const rect = ref.getBoundingClientRect();
-        return rect.top >= 0;
+        console.log(rect.top);
+        return (rect.top + rect.bottom) / 2 > 56;
       });
-      setCurrentSection(sectionIdx === -1 ? sections.length - 1 : sectionIdx);
+      if (sectionIdx !== -1) {
+        setCurrentSection(sectionIdx);
+      }
     };
     window.addEventListener("scroll", handleScroll);
-    resizeHandler();
-    window.addEventListener("resize", resizeHandler);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const onClick = (idx: number) => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsOpen(true);
+          } else {
+            setIsOpen(false);
+          }
+        });
+      },
+      {
+        threshold: 0,
+      }
+    );
+    observer.observe(headerRef.current!);
+    return () => observer.disconnect();
+  }, []);
+
+  const navigationHandler = (idx: number) => {
     if (idx == 0) {
-      setIsOpen(true);
       window.scrollTo({
         top: 0,
-        behavior: "auto",
+        behavior: "smooth",
       });
     } else {
       window.scrollTo({
-        top: sectionRef.current[idx].offsetTop - 8 * 8 - 10,
-        behavior: "auto",
+        top: sectionRef.current[idx].offsetTop - 56 - 10,
+        behavior: "smooth",
       });
     }
   };
@@ -219,54 +169,124 @@ export default function Index() {
       >
         <Flex
           minW={"280px"}
+          px={isOpen ? 2 : 0}
           h={{
             base: "auto",
             md: "full",
           }}
           borderRadius={16}
-          display={"flex"}
           flexDir={"column"}
-          position={"sticky"}
+          position={isDesktop ? "sticky" : "static"}
           top={{
             base: 0,
             md: 8,
           }}
-          p={isOpen ? 2 : 0}
         >
-          <Collapse in={isOpen} animateOpacity>
-            <Header
-              mb={{
-                base: 2,
-                md: 4,
-              }}
-            />
-          </Collapse>
-          <Card
-            p={3}
-            px={isOpen ? 3 : 5}
-            boxShadow={isOpen ? "xs" : "none"}
-            borderRadius={isOpen ? 16 : 0}
-          >
-            <List
-              display={"flex"}
+          <Box ref={headerRef} my={2}>
+            <Card
               flexDir={{
                 base: "row",
                 md: "column",
               }}
-              w="full"
+              alignItems={{
+                base: "flex-start",
+                md: "center",
+              }}
+              gap={4}
+              p={4}
             >
-              {navigations.map((navigation, idx) => (
-                <NavigationItem
-                  id={navigation.href}
-                  selected={idx === currentSection}
-                  key={`sect${idx}`}
-                  onClick={() => onClick(idx)}
+              <Box
+                w={{
+                  base: "100px",
+                  md: "120px",
+                }}
+                overflow={"hidden"}
+                borderRadius={"100%"}
+              >
+                <Image
+                  as={NextImage}
+                  src={me}
+                  alt="Jiwon Choi"
+                  placeholder="blur"
+                />
+              </Box>
+              <Flex flexDir="column">
+                <Flex
+                  mx={2}
+                  flexDir={{
+                    base: "column",
+                    md: "column",
+                  }}
+                  align={{
+                    base: "flex-start",
+                    md: "center",
+                  }}
+                  gap={{
+                    base: 0,
+                    md: 0,
+                  }}
                 >
-                  {navigation.label}
-                </NavigationItem>
-              ))}
-            </List>
-          </Card>
+                  <Text fontWeight={700} fontSize={24}>
+                    Jiwon Choi
+                  </Text>
+                  <Text>{"Jason Choi, 최지원"}</Text>
+                </Flex>
+
+                <List
+                  w={"full"}
+                  orientation={"horizontal"}
+                  justifyContent={{
+                    base: "left",
+                    md: "space-evenly",
+                  }}
+                  display={"flex"}
+                >
+                  {socials.map((social) => (
+                    <SocialButton key={social.href} {...social} />
+                  ))}
+                </List>
+              </Flex>
+            </Card>
+          </Box>
+          <Box minH="56px">
+            <Card
+              w="full"
+              id="navigation"
+              mt={{
+                base: 0,
+                md: 4,
+              }}
+              p={isOpen ? 3 : 5}
+              boxShadow={isOpen ? "xs" : "none"}
+              borderRadius={isOpen ? 16 : 0}
+              position={isOpen ? "static" : "fixed"}
+              bgColor={isOpen ? sectionColor : bgColor}
+              top={0}
+              mb={2}
+              transition="background-color 0.2s linear, box-shadow 0.2s linear, border-radius 0.2s linear"
+            >
+              <List
+                display={"flex"}
+                flexDir={{
+                  base: "row",
+                  md: "column",
+                }}
+                w="full"
+                overflow={"hidden"}
+              >
+                {navigations.map((navigation, idx) => (
+                  <NavigationItem
+                    id={navigation.href}
+                    selected={idx === currentSection}
+                    key={`sect${idx}`}
+                    onClick={() => navigationHandler(idx)}
+                  >
+                    {navigation.label}
+                  </NavigationItem>
+                ))}
+              </List>
+            </Card>
+          </Box>
         </Flex>
         <Flex
           py={{
@@ -274,16 +294,13 @@ export default function Index() {
             md: 2,
           }}
           px={2}
-          position={"static"}
         >
-          <Card gap={8}>
-            {sections.map(({ id, Component }) => (
+          <Card gap={8} w="full">
+            {sections.map(({ id, Component }, idx) => (
               <Box
                 key={id}
                 id={id}
-                ref={(ref) => {
-                  sectionRef.current.push(ref as HTMLDivElement);
-                }}
+                ref={(el) => (sectionRef.current[idx] = el!)}
               >
                 <Component />
               </Box>

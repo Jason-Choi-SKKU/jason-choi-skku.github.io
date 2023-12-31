@@ -1,4 +1,4 @@
-import { defineStyle, defineStyleConfig, extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import { defineStyleConfig, extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
 import { StyleFunctionProps, mode } from "@chakra-ui/theme-tools";
 
 export const PRIMARY_COLOR = "orange";
@@ -35,7 +35,7 @@ export const theme = extendTheme(
           display: "flex",
           flexDir: "column",
           borderRadius: 16,
-          padding: 8,
+          p: { base: 4, md: 8 },
           bg: mode("white", "gray.800")(props),
           boxShadow: mode("sm", "dark-sm")(props),
           gap: 2,
@@ -43,13 +43,13 @@ export const theme = extendTheme(
       }),
       Heading: defineStyleConfig({
         baseStyle: props => ({
-          color: mode("orange.500", "orange.200")(props),
+          color: mode(PRIMARY[500], PRIMARY[200])(props),
         }),
       }),
       Mark: defineStyleConfig({
         baseStyle: props => ({
-          bgColor: mode("orange.100", "orange.900")(props),
-          color: mode("orange.900", "orange.100")(props),
+          bgColor: mode(PRIMARY[100], PRIMARY[900])(props),
+          color: mode(PRIMARY[600], PRIMARY[100])(props),
           fontWeight: 600,
           p: 1,
           rounded: "md",

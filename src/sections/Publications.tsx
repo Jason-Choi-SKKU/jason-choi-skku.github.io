@@ -5,6 +5,7 @@ import {
   ButtonGroup,
   Flex,
   Heading,
+  Highlight,
   Icon,
   Link,
   List,
@@ -30,7 +31,16 @@ function AuthorNames({ authorNames }: { authorNames: string[] }) {
             href={authors.find((a) => a.name === author)?.url || ""}
           >
             <Text as="span" key={`author${index}`}>
-              {author}
+              <Highlight
+                query={["Jiwon Choi"]}
+                styles={{
+                  backgroundColor: "none",
+                  padding: 0,
+                  textDecoration: "underline",
+                }}
+              >
+                {author}
+              </Highlight>
             </Text>
           </Link>
           <Text as="span" key={`comma${index}`}>
