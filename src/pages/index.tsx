@@ -270,7 +270,10 @@ export default function Index() {
                   md: "column",
                 }}
                 w="full"
-                overflow={"hidden"}
+                justifyContent={{
+                  base: "space-between",
+                  md: "flex-start",
+                }}
               >
                 {navigations.map((navigation, idx) => (
                   <NavigationItem

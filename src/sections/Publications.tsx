@@ -62,7 +62,7 @@ function AuthorNames({ authorNames }: { authorNames: string[] }) {
 function PubButton({ href, icon, children }: any) {
   return (
     <Link as={NextLink} href={href} isExternal>
-      <Center p={1}>
+      <Center p={1} fontSize={"xs"}>
         <Icon as={icon} mr={1} />
         {children}
       </Center>
