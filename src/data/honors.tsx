@@ -141,7 +141,7 @@ const ko: CareerType[] = [
   },
   {
     title: "2022 KAIST ICIST Graffiti 창업 해커톤",
-    date: "2022. 1",
+    date: "2022년 1월",
     location: "은상 (3위)",
     description: "데이터 기반 스타트업 발전 방향 제안",
     url: "",

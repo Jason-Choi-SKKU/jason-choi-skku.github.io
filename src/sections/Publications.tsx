@@ -51,8 +51,8 @@ function AuthorNames({ authorNames }: { authorNames: string[] }) {
                 ? " and "
                 : ", and "
               : index === authorNames.length - 1
-              ? ""
-              : ", "}
+                ? ""
+                : ", "}
           </Text>
         </>
       ))}

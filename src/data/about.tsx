@@ -1,5 +1,6 @@
 import BioEn from "@/data/bio/en.mdx";
 import BioKo from "@/data/bio/ko.mdx";
+import ProfileImage from "@/data/profileImage.png";
 
 const en: AboutType = {
   name: "Jiwon Choi",
@@ -7,6 +8,7 @@ const en: AboutType = {
   pageTitle: "Jiwon Jason Choi",
   pageDescription: "Jason's Personal Page",
   Bio: BioEn,
+  profileImage: ProfileImage,
 };
 
 const ko: AboutType = {
@@ -15,6 +17,7 @@ const ko: AboutType = {
   description: "Jiwon Jason Choi",
   pageDescription: "Jason's Personal Page",
   Bio: BioKo,
+  profileImage: ProfileImage,
 };
 
 export const about = { en, ko };

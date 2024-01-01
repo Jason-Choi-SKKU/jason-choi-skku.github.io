@@ -10,6 +10,7 @@
     "deploy": "touch out/.nojekyll && echo 'git.jasonchoi.dev' > out/CNAME && gh-pages -d out --dotfiles"
   },
   "dependencies": {
+    "@chakra-ui/anatomy": "^2.2.2",
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/theme-tools": "^2.1.2",
