@@ -38,10 +38,12 @@ type AboutType = {
   profileImage: StaticImageData;
 };
 
-type Language = "en" | "ko";
+type Language = "en" | "ko" | "es";
 
 type I18nData = {
-  [key in Language]: any;
+  [key in Language]?: any;
+} & {
+  en: any;
 };
 
 type NewsType = {
