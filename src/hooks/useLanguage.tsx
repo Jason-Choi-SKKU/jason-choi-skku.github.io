@@ -1,7 +1,11 @@
 import { useState, useLayoutEffect } from "react";
 
 export function useLanguage() {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, _setLanguage] = useState<Language>("en");
+  const setLanguage = (lang: Language) => {
+    localStorage.setItem("language", lang);
+    _setLanguage(lang);
+  };
 
   useLayoutEffect(() => {
     const storedLanguage = localStorage.getItem("language");
@@ -10,9 +14,8 @@ export function useLanguage() {
     } else {
       const navigatorLanguage = navigator.language.split("-")[0] as Language;
       setLanguage(navigatorLanguage);
-      localStorage.setItem("language", navigatorLanguage);
     }
   }, []);
 
-  return language;
+  return { language, setLanguage };
 }

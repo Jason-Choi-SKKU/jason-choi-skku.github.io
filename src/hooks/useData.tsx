@@ -2,14 +2,14 @@ import { useLayoutEffect, useState } from "react";
 import { useLanguage } from "./useLanguage";
 
 export function useData<T>(i18ndata: I18nData) {
-  const lang = useLanguage();
-  const [data, setData] = useState<T>(i18ndata[lang]);
+  const { language } = useLanguage();
+  const [data, setData] = useState<T>(i18ndata[language]);
   useLayoutEffect(() => {
-    if (i18ndata[lang]) {
-      setData(i18ndata[lang]);
+    if (i18ndata[language]) {
+      setData(i18ndata[language]);
     } else {
       setData(i18ndata.en);
     }
-  }, [i18ndata, lang]);
+  }, [i18ndata, language]);
   return data;
 }

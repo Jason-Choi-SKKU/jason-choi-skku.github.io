@@ -1,4 +1,3 @@
-
 type CareerType = {
   title: string;
   role: string;
@@ -17,9 +16,11 @@ type PubType = {
   webDemoLink?: string;
   videoDemoLink?: string;
   talkLink?: string;
-}
+};
 
-type Bio = import('mdx/types').MDXContent
+type MDXContent = import("mdx/types").MDXContent;
+
+type StaticImageData = import("next/image").StaticImageData;
 
 type EntityType = CareerType | PubType;
 
@@ -33,11 +34,24 @@ type AboutType = {
   description: string;
   pageTitle: string;
   pageDescription: string;
-  Bio: Bio;
+  Bio: MDXContent;
+  profileImage: StaticImageData;
 };
 
-type Language = "en" | "ko"
+type Language = "en" | "ko";
 
 type I18nData = {
-  [key in Language]: any;
+  [key: Language]: any;
+};
+
+type NewsType = {
+  date: string;
+  description: string;
+}
+
+type ProjectType = {
+  title: string;
+  description: string;
+  image: StaticImageData;
+  content: MDXContent;
 }

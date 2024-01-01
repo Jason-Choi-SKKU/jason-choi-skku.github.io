@@ -23,14 +23,12 @@ export const theme = extendTheme(
       global: (props: StyleFunctionProps) => ({
         body: {
           bg: mode("gray.100", "gray.900")(props),
+          w: "100vw",
         },
       }),
     },
     components: {
       Card: defineStyleConfig({
-        defaultProps: {
-          variant: "elevated",
-        },
         baseStyle: props => ({
           display: "flex",
           flexDir: "column",
