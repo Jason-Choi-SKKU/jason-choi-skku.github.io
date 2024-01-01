@@ -1,4 +1,5 @@
-type EntityType = {
+
+type CareerType = {
   title: string;
   role: string;
   date: string;
@@ -18,7 +19,25 @@ type PubType = {
   talkLink?: string;
 }
 
+type Bio = import('mdx/types').MDXContent
+
+type EntityType = CareerType | PubType;
+
 type AuthorType = {
   name: string;
   url?: string;
 };
+
+type AboutType = {
+  name: string;
+  description: string;
+  pageTitle: string;
+  pageDescription: string;
+  Bio: Bio;
+};
+
+type Language = "en" | "ko"
+
+type I18nData = {
+  [key in Language]: any;
+}

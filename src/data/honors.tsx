@@ -1,4 +1,4 @@
-export const honors: EntityType[] = [
+const en: CareerType[] = [
   {
     title: "Shim-San Scholarship",
     date: "Dec. 2023",
@@ -98,3 +98,106 @@ export const honors: EntityType[] = [
     role: "",
   },
 ];
+
+const ko: CareerType[] = [
+  {
+    title: "심산 장학금",
+    date: "2023년 12월",
+    role: "",
+    url: "",
+    description:
+      "성균관대학교 소프트웨어학과에서 2023년 가을학기 장학생으로 선정",
+  },
+  {
+    title: "성균관대학교 新대학원우수장학금",
+    date: "2023년 9월 - 2025년 8월",
+    role: "",
+    url: "",
+    description: "성균관대학교 新대학원우수장학금 수혜자로 선정 (반액 장학금)",
+  },
+  {
+    title: "제 1회 KAIST SPARCS 스타트업 해커톤",
+    date: "2023년 1월",
+    location: "보이저엑스상 (1위)",
+    description: "CloZ: 자연어 기반 의류 디자인 시스템",
+    url: "",
+    role: "",
+  },
+  {
+    title: "제 2회 성균관대학교 사범대학 AI-SW 캡스톤 디자인 공모전",
+    date: "2022년 12월",
+    location: "은상 (3위)",
+    description: "ELLmo: 딥러닝 기반 영어 학습 피드백 시스템",
+    url: "",
+    role: "",
+  },
+  {
+    title: "제 2회 성균관대학교 AI-교육 해커톤",
+    date: "2022년 9월",
+    location: "대상 (1위)",
+    description: "VACode: 대규모 학습을 위한 소스코드 시각적 분석 시스템",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2022 KAIST ICIST Graffiti 창업 해커톤",
+    date: "2022. 1",
+    location: "은상 (3위)",
+    description: "데이터 기반 스타트업 발전 방향 제안",
+    url: "",
+    role: "",
+  },
+  {
+    title: "모노톤 해커톤",
+    date: "2022년 1월",
+    location: "최우수상 (1위)",
+    description: "글자리: 감정 시각화를 통한 개인 일기장",
+    url: "",
+    role: "",
+  },
+  {
+    title: "제 1회 성균관대학교 사범대학 AI-SW 캡스톤 디자인 공모전",
+    date: "2021년 12월",
+    location: "은상 (3위)",
+    description: "GIMD2: 다차원 데이터를 위한 제스처 인터랙션",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2021 한국인터넷정보학회 추계학술대회 아이디어 해커톤",
+    date: "2021년 10월",
+    location: "은상 (3위)",
+    description: "발음 장애를 위한 딥러닝 기반 발음 교정 보조 시스템",
+    url: "",
+    role: "",
+  },
+  {
+    title: "제 1회 성균관대학교 AI-교육 해커톤",
+    date: "2021년 9월",
+    location: "금상 (2위)",
+    description: "MILK: 한국어 학습을 위한 가장 혁신적인 방법",
+    url: "",
+    role: "",
+  },
+  {
+    title: "2020 한국인터넷윤리학회 4차 산업혁명 공모전",
+    date: "2020년 11월",
+    location: "우수상 (3위)",
+    url: "",
+    role: "",
+    description: "다중 회귀 분석 기반 의상 추천 시스템",
+  },
+  {
+    title: "성동교육지원청 정보영재교육원",
+    date: "2012년 10월",
+    location: "대상",
+    description: "개인용 대시보드 시스템 설계 및 개발",
+    url: "",
+    role: "",
+  },
+];
+
+export const honors: I18nData = {
+  en,
+  ko,
+};

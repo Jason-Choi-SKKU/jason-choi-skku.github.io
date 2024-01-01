@@ -10,7 +10,7 @@ import {
 import NextLink from "next/link";
 
 type CareerItemProps = {
-  career: EntityType;
+  career: CareerType;
   key: string;
 } & FlexProps;
 

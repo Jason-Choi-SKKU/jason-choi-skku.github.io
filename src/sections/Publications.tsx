@@ -1,6 +1,7 @@
 import { authors } from "@/data/authors";
 import { publications } from "@/data/publications";
 import {
+  Box,
   Button,
   ButtonGroup,
   Center,
@@ -85,35 +86,33 @@ function PubItem(props: any, key: string) {
           {venue}
         </Text>
       ))}
-      <Flex gap={2}>
-        <ButtonGroup>
-          {props.pub.pdfLink && (
-            <PubButton href={props.pub.pdfLink} icon={FaFilePdf}>
-              PDF
-            </PubButton>
-          )}
-          {props.pub.githubLink && (
-            <PubButton href={props.pub.githubLink} icon={FaGithub}>
-              GitHub
-            </PubButton>
-          )}
-          {props.pub.webDemoLink && (
-            <PubButton href={props.pub.webDemoLink} icon={FaGlobe}>
-              Web Demo
-            </PubButton>
-          )}
-          {props.pub.videoDemoLink && (
-            <PubButton href={props.pub.videoDemoLink} icon={FaVideo}>
-              Video Demo
-            </PubButton>
-          )}
-          {props.pub.talkLink && (
-            <PubButton href={props.pub.talkLink} icon={FaVolumeHigh}>
-              Talk
-            </PubButton>
-          )}
-        </ButtonGroup>
-      </Flex>
+      <Box display={"flex"} flexWrap={"wrap"} gap={1}>
+        {props.pub.pdfLink && (
+          <PubButton href={props.pub.pdfLink} icon={FaFilePdf}>
+            PDF
+          </PubButton>
+        )}
+        {props.pub.githubLink && (
+          <PubButton href={props.pub.githubLink} icon={FaGithub}>
+            GitHub
+          </PubButton>
+        )}
+        {props.pub.webDemoLink && (
+          <PubButton href={props.pub.webDemoLink} icon={FaGlobe}>
+            Web Demo
+          </PubButton>
+        )}
+        {props.pub.videoDemoLink && (
+          <PubButton href={props.pub.videoDemoLink} icon={FaVideo}>
+            Video Demo
+          </PubButton>
+        )}
+        {props.pub.talkLink && (
+          <PubButton href={props.pub.talkLink} icon={FaVolumeHigh}>
+            Talk
+          </PubButton>
+        )}
+      </Box>
     </ListItem>
   );
 }

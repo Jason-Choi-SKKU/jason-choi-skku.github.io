@@ -3,17 +3,20 @@ import {
   Box,
   Button,
   CardProps,
+  Center,
   Container,
   Flex,
   Icon,
   List,
   ListItem,
+  Select,
+  Switch,
   Text,
   useColorMode,
   useColorModeValue,
   useStyleConfig,
 } from "@chakra-ui/react";
-import { debounce } from "lodash";
+import { throttle } from "lodash";
 import Head from "next/head";
 import NextImage from "next/image";
 import me from "./jiwonchoi.png";
@@ -21,7 +24,6 @@ import me from "./jiwonchoi.png";
 import { navigations } from "@/data/navigations";
 import { socials } from "@/data/socials";
 
-import About from "@/sections/About";
 import Educations from "@/sections/Educations";
 import Experiences from "@/sections/Experiences";
 import Honors from "@/sections/Honors";
@@ -29,6 +31,11 @@ import Publications from "@/sections/Publications";
 import NextLink from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { PRIMARY_COLOR } from "../theme";
+import { useData } from "@/hooks/useData";
+import { about } from "@/data/about";
+import { FaMoon, FaSun } from "react-icons/fa6";
+import { useLanguage } from "@/hooks/useLanguage";
+
 type SocialButtonProps = {
   href: string;
   icon: any;
@@ -97,13 +104,15 @@ export default function Index() {
   const headerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement[]>([]);
   const [isOpen, setIsOpen] = useState(true);
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const isDesktop = useIsDesktop();
   const bgColor = useColorModeValue("gray.100", "gray.900");
   const sectionColor = useColorModeValue("white", "gray.800");
+  const aboutData = useData<AboutType>(about);
+  const lang = useLanguage();
 
   useEffect(() => {
-    const handleScroll = debounce(() => {
+    const handleScroll = throttle(() => {
       const sectionIdx = sectionRef.current.findIndex((ref) => {
         if (!ref) return false;
         const rect = ref.getBoundingClientRect();
@@ -118,7 +127,7 @@ export default function Index() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = debounce(() => {
+    const handleScroll = throttle(() => {
       const headerRect = headerRef.current?.getBoundingClientRect();
       if (headerRect && headerRect.bottom > 0) {
         setIsOpen(true);
@@ -147,8 +156,8 @@ export default function Index() {
   return (
     <Container maxW={"container.xl"} p={0}>
       <Head>
-        <title>Jiwon Jason Choi</title>
-        <meta name="description" content="Jason's Personal Page" />
+        <title>{aboutData.pageTitle}</title>
+        <meta name="description" content={aboutData.pageDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Flex
@@ -219,9 +228,9 @@ export default function Index() {
                   }}
                 >
                   <Text fontWeight={700} fontSize={24}>
-                    Jiwon Choi
+                    {aboutData.name}
                   </Text>
-                  <Text>{"Jason Choi, 최지원"}</Text>
+                  <Text>{aboutData.description}</Text>
                 </Flex>
 
                 <List
@@ -290,6 +299,7 @@ export default function Index() {
           </Box>
         </Flex>
         <Flex
+          flexGrow={1}
           py={{
             base: 0,
             md: 2,
@@ -297,11 +307,20 @@ export default function Index() {
           px={2}
         >
           <Card gap={8} w="full">
+            <Box
+              ref={(el) => {
+                sectionRef.current[0] = el!;
+              }}
+            >
+              <aboutData.Bio />
+            </Box>
             {sections.map(({ id, Component }, idx) => (
               <Box
                 key={id}
                 id={id}
-                ref={(el) => (sectionRef.current[idx] = el!)}
+                ref={(el) => {
+                  sectionRef.current[idx + 1] = el!;
+                }}
               >
                 <Component />
               </Box>
@@ -309,28 +328,51 @@ export default function Index() {
           </Card>
         </Flex>
       </Flex>
-      <Text w={"full"} fontSize="xs" align={"center"} color={"gray"} my={4}>
-        Copyright © 2023 Jiwon Jason Choi. All Rights Reserved.
-      </Text>
-      <Text
-        w={"full"}
-        fontSize="xs"
-        align={"center"}
-        color={"gray"}
-        my={4}
-        onClick={toggleColorMode}
-      >
-        Toggle Color Mode
-      </Text>
+      <Center flexDir={"column"} my={4} gap={2}>
+        <Flex
+          bottom={4}
+          right={4}
+          w={"fit-content"}
+          flexDir="row"
+          gap={2}
+          zIndex={1}
+          bgColor={bgColor}
+        >
+          <Select
+            size="sm"
+            variant="outline"
+            border={0}
+            colorScheme="gray"
+            color="gray"
+            value={lang}
+            onChange={(e) => {
+              localStorage.setItem("language", e.target.value);
+              window.location.reload();
+            }}
+          >
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+          </Select>
+          <Button
+            rightIcon={<Icon as={useColorModeValue(FaSun, FaMoon)} />}
+            onClick={toggleColorMode}
+            variant="ghost"
+            colorScheme="gray"
+            size="sm"
+            color="gray"
+          >
+            {colorMode === "light" ? "Light" : "Dark"}
+          </Button>
+        </Flex>
+        <Text w={"full"} fontSize="xs" align={"center"} color={"gray"}>
+          {`Copyright © 2023 ${aboutData.name}. All Rights Reserved.`}
+        </Text>
+      </Center>
     </Container>
   );
 }
 
 const sections = [
-  {
-    id: "about",
-    Component: About,
-  },
   {
     id: "experiences",
     Component: Experiences,
