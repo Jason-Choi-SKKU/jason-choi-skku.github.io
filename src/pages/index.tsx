@@ -87,7 +87,12 @@ export default function Index() {
           px={2}
         >
           <Card gap={8} w="full">
-            <Box id="about">
+            <Box
+              id="about"
+              ref={(el) => {
+                sectionRef.current[0] = el!;
+              }}
+            >
               <About aboutData={aboutData} />
             </Box>
             {sections.map(({ id, Component }, idx) => (
