@@ -14,6 +14,8 @@ export const publications: PubType[] = [
       "Proceedings of Conference on 2023 IEEE Visualization & Visual Analytics (IEEE VIS), Melbourn, Australia",
     ],
     githubLink: "https://github.com/jjmmwon/ProjectionEnsemble",
+    videoDemoLink: "https://youtu.be/rgzyFg7mOfc",
+    webDemoLink: "https://jjmmwon.github.io/ProjectionEnsemble/",
   },
   {
     title: "Multi-Criteria Optimization for Automatic Dashboard Design",
