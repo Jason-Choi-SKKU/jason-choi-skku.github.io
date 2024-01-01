@@ -35,7 +35,20 @@ export const CareerItem = (props: CareerItemProps, key: string) => (
     </Text>
 
     <Flex direction={"column"}>
-      <Link as={NextLink} href={props.career.url} isExternal>
+      {props.career.url ? (
+        <Link as={NextLink} href={props.career.url} isExternal>
+          <Text>
+            <Text as="span" fontWeight={600} fontSize={"lg"}>
+              {props.career.title}
+            </Text>
+            {props.career.location && (
+              <Text as="span" fontSize="xs">
+                , {props.career.location}
+              </Text>
+            )}
+          </Text>
+        </Link>
+      ) : (
         <Text>
           <Text as="span" fontWeight={600} fontSize={"lg"}>
             {props.career.title}
@@ -46,7 +59,7 @@ export const CareerItem = (props: CareerItemProps, key: string) => (
             </Text>
           )}
         </Text>
-      </Link>
+      )}
       <Text as="i">{props.career.role}</Text>
       <Text fontSize={"sm"} color={"gray"}>
         {props.career.description}

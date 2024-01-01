@@ -3,6 +3,7 @@ import { publications } from "@/data/publications";
 import {
   Button,
   ButtonGroup,
+  Center,
   Flex,
   Heading,
   Highlight,
@@ -61,15 +62,10 @@ function AuthorNames({ authorNames }: { authorNames: string[] }) {
 function PubButton({ href, icon, children }: any) {
   return (
     <Link as={NextLink} href={href} isExternal>
-      <Button
-        variant={"link"}
-        p={0}
-        size={"xs"}
-        leftIcon={<Icon as={icon} />}
-        zIndex={0}
-      >
+      <Center p={1}>
+        <Icon as={icon} mr={1} />
         {children}
-      </Button>
+      </Center>
     </Link>
   );
 }

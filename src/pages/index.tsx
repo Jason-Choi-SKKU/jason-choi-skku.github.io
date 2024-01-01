@@ -5,7 +5,6 @@ import {
   CardProps,
   Container,
   Flex,
-  FlexProps,
   Icon,
   List,
   ListItem,
@@ -14,6 +13,7 @@ import {
   useColorModeValue,
   useStyleConfig,
 } from "@chakra-ui/react";
+import { debounce } from "lodash";
 import Head from "next/head";
 import NextImage from "next/image";
 import me from "./jiwonchoi.png";
@@ -27,7 +27,7 @@ import Experiences from "@/sections/Experiences";
 import Honors from "@/sections/Honors";
 import Publications from "@/sections/Publications";
 import NextLink from "next/link";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PRIMARY_COLOR } from "../theme";
 type SocialButtonProps = {
   href: string;
@@ -44,6 +44,7 @@ const NavigationItem = (props: any) => (
   <Button
     size={{
       base: "xs",
+      sm: "sm",
       md: "md",
     }}
     justifyContent={{
@@ -102,38 +103,31 @@ export default function Index() {
   const sectionColor = useColorModeValue("white", "gray.800");
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = debounce(() => {
       const sectionIdx = sectionRef.current.findIndex((ref) => {
         if (!ref) return false;
         const rect = ref.getBoundingClientRect();
-        console.log(rect.top);
         return (rect.top + rect.bottom) / 2 > 56;
       });
       if (sectionIdx !== -1) {
         setCurrentSection(sectionIdx);
       }
-    };
+    }, 100);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsOpen(true);
-          } else {
-            setIsOpen(false);
-          }
-        });
-      },
-      {
-        threshold: 0,
+    const handleScroll = debounce(() => {
+      const headerRect = headerRef.current?.getBoundingClientRect();
+      if (headerRect && headerRect.bottom > 0) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
       }
-    );
-    observer.observe(headerRef.current!);
-    return () => observer.disconnect();
+    }, 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navigationHandler = (idx: number) => {
@@ -168,8 +162,10 @@ export default function Index() {
         }}
       >
         <Flex
-          minW={"280px"}
-          px={isOpen ? 2 : 0}
+          minW={{
+            base: 0,
+            md: "280px",
+          }}
           h={{
             base: "auto",
             md: "full",
@@ -182,7 +178,7 @@ export default function Index() {
             md: 8,
           }}
         >
-          <Box ref={headerRef} my={2}>
+          <Box ref={headerRef} m={2}>
             <Card
               flexDir={{
                 base: "row",
@@ -221,10 +217,6 @@ export default function Index() {
                     base: "flex-start",
                     md: "center",
                   }}
-                  gap={{
-                    base: 0,
-                    md: 0,
-                  }}
                 >
                   <Text fontWeight={700} fontSize={24}>
                     Jiwon Choi
@@ -248,7 +240,13 @@ export default function Index() {
               </Flex>
             </Card>
           </Box>
-          <Box minH="56px">
+          <Box
+            minH={{
+              base: "55.5px",
+              sm: "63.5px",
+            }}
+            px={isOpen ? 2 : 0}
+          >
             <Card
               w="full"
               id="navigation"
