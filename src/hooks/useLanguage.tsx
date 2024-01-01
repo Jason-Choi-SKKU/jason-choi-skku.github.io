@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 
 export function useLanguage() {
   const [language, _setLanguage] = useState<Language>("en");
@@ -7,7 +7,7 @@ export function useLanguage() {
     _setLanguage(lang);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const storedLanguage = localStorage.getItem("language");
     if (storedLanguage) {
       setLanguage(storedLanguage as Language);

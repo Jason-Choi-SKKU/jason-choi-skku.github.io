@@ -41,7 +41,7 @@ type AboutType = {
 type Language = "en" | "ko";
 
 type I18nData = {
-  [key: Language]: any;
+  [key in Language]: any;
 };
 
 type NewsType = {

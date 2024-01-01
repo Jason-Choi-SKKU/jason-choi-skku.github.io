@@ -22,13 +22,18 @@ import {
   FaVideo,
   FaVolumeHigh,
 } from "react-icons/fa6";
-function AuthorNames({ authorNames }: { authorNames: string[] }) {
+function AuthorNames({
+  authorNames,
+  pKey,
+}: {
+  authorNames: string[];
+  pKey: string;
+}) {
   return (
-    <Text>
+    <>
       {authorNames.map((author, index) => (
-        <>
+        <Text as="i" key={`authorNames${index}`}>
           <Link
-            key={`authorLink${author}${index}`}
             as={NextLink}
             href={authors.find((a) => a.name === author)?.url || ""}
           >
@@ -45,18 +50,18 @@ function AuthorNames({ authorNames }: { authorNames: string[] }) {
               </Highlight>
             </Text>
           </Link>
-          <Text as="span" key={`comma${index}`}>
+          <Text as="span">
             {index === authorNames.length - 2
               ? authorNames.length === 2
                 ? " and "
                 : ", and "
               : index === authorNames.length - 1
-                ? ""
-                : ", "}
+              ? ""
+              : ", "}
           </Text>
-        </>
+        </Text>
       ))}
-    </Text>
+    </>
   );
 }
 
@@ -73,14 +78,13 @@ function PubButton({ href, icon, children }: any) {
 
 function PubItem(props: any, key: string) {
   return (
-    <ListItem>
+    <ListItem key={key}>
       <Text fontWeight={600} fontSize={"lg"}>
         {props.pub.title}
       </Text>
 
-      <Text as={"i"}>
-        <AuthorNames authorNames={props.pub.authorNames} />
-      </Text>
+      <AuthorNames authorNames={props.pub.authorNames} pKey={key} />
+
       {props.pub.venue.map((venue: string) => (
         <Text color={"gray"} fontSize={"sm"} key={venue}>
           {venue}
