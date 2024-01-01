@@ -1,0 +1,42 @@
+{
+  "name": "jason-choi.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next-export-optimize-images",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "touch out/.nojekyll && echo 'git.jasonchoi.dev' > out/CNAME && gh-pages -d out --dotfiles"
+  },
+  "dependencies": {
+    "@chakra-ui/anatomy": "^2.2.2",
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/theme-tools": "^2.1.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mdx-js/loader": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "@next/mdx": "^14.0.4",
+    "@types/mdx": "^2.0.10",
+    "framer-motion": "^10.16.16",
+    "lodash": "^4.17.21",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "sharp": "^0.33.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "gh-pages": "^6.1.1",
+    "next-export-optimize-images": "^3.2.0",
+    "typescript": "^5"
+  }
+}
