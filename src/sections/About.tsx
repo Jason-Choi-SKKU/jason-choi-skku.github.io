@@ -48,12 +48,15 @@ export function About({ aboutData }: { aboutData: AboutType }) {
           overflowX="scroll"
           css={{
             "&::-webkit-scrollbar": {
-              borderRadius: 10,
-              height: 10,
+              width: "10px",
+              height: "10px",
             },
             "&::-webkit-scrollbar-thumb": {
               backgroundColor: scrollColor,
-              borderRadius: 10,
+              borderRadius: "10px",
+            },
+            "&::-webkit-scrollbar-track": {
+              backgroundColor: "transparent",
             },
           }}
         >

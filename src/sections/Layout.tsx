@@ -223,8 +223,15 @@ export function Gallery({ item }: { item: ProjectType }, key: string) {
       bgColor={bgColor}
       boxShadow={"sm"}
     >
-      <Box h={100} position={"relative"}>
-        <Image fill as={NextImage} src={item.image} alt={item.title} />
+      <Box h={100} position={"static"}>
+        <Image
+          w={200}
+          h={100}
+          as={NextImage}
+          src={item.image}
+          alt={item.title}
+          position={"static"}
+        />
       </Box>
       <Box px={2} pb={4}>
         <Text fontWeight={700} size={"md"}>
