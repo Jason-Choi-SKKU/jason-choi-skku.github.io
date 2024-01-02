@@ -170,6 +170,8 @@ export function Header({ aboutData }: { aboutData: AboutType }) {
         borderRadius={"100%"}
       >
         <Image
+          w={{ base: "100px", md: "120px" }}
+          h={{ base: "100px", md: "120px" }}
           as={NextImage}
           src={aboutData.profileImage}
           alt={`Profile Image of ${aboutData.name}`}
@@ -225,8 +227,8 @@ export function Gallery({ item }: { item: ProjectType }, key: string) {
     >
       <Box h={100} position={"static"}>
         <Image
-          w={200}
-          h={100}
+          w={"200px"}
+          h={"100px"}
           as={NextImage}
           src={item.image}
           alt={item.title}
