@@ -229,6 +229,7 @@ export function Gallery({ item }: { item: ProjectType }, key: string) {
         <Image
           w={"200px"}
           h={"100px"}
+          style={{ objectFit: "contain" }}
           as={NextImage}
           src={item.image}
           alt={item.title}
