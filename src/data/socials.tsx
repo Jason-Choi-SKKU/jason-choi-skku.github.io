@@ -17,7 +17,7 @@ export const socials = [
     icon: FaGraduationCap,
   },
   {
-    href: "https://github.com/jason-choi",
+    href: "https://github.com/jiwnchoi",
     icon: FaGithub,
   },
   {
