@@ -25,6 +25,7 @@ pnpm run deploy
 - Responsive layout
 - Scroll and button navigation
 - MDX article
+- CI/CD with GitHub Actions (pnpm, next.js)
 
 ## Stacks
 
