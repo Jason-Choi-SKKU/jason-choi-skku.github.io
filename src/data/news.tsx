@@ -1,6 +1,10 @@
 const en = [
   {
     date: "Jan. 2024",
+    description: `🏆 Honored to receive an outstanding TA award!`,
+  },
+  {
+    date: "Jan. 2024",
     description: `Excited to start a software engineer internship at NAVER Corp!`,
   },
   {
@@ -14,6 +18,10 @@ const en = [
 ];
 
 const ko = [
+  {
+    date: "Jan. 2024",
+    description: `🏆 교내 최우수 TA에게 수여되는 SKKU TA Award를 수상했습니다!`,
+  },
   {
     date: "2024년 1월",
     description: `네이버에서 소프트웨어 엔지니어 인턴십을 시작합니다! 신나요 :)`,
