@@ -4,8 +4,7 @@ const en: CareerType[] = [
     date: "Jan. 2024",
     role: "",
     url: "",
-    description:
-      "Selected as one of the outstanding TAs (18 TAs on campus)",
+    description: "Selected as one of the outstanding TAs (18 TAs on campus)",
   },
   {
     title: "Shim-San Scholarship",
@@ -110,11 +109,10 @@ const en: CareerType[] = [
 const ko: CareerType[] = [
   {
     title: "SKKU TA Award",
-    date: "Jan. 2024",
+    date: "2024년 1월",
     role: "",
     url: "",
-    description:
-      "최우수 TA로 선정 (교내 18명 수여)",
+    description: "최우수 TA로 선정 (교내 18명 수여)",
   },
   {
     title: "심산 장학금",

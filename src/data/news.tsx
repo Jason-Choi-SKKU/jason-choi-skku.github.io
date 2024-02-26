@@ -19,7 +19,7 @@ const en = [
 
 const ko = [
   {
-    date: "Jan. 2024",
+    date: "2024년 1월",
     description: `🏆 교내 최우수 TA에게 수여되는 SKKU TA Award를 수상했습니다!`,
   },
   {

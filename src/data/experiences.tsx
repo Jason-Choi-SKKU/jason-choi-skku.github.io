@@ -1,19 +1,20 @@
 export const en: CareerType[] = [
   {
-    title: "NAVER Corporation",
-    role: "Software Engineer Intern",
-    location: "Seongnam, South Korea",
-    date: "Jan. 2024 - Present",
-    description: "Designed and developed LLM-based automated web design tools.",
-    url: "https://www.navercorp.com",
-  },
-  {
     title: "Sungkyunkwan University",
     role: "Research Assistant, Interactive Data Computing Lab",
     location: "Suwon, South Korea",
     date: "May. 2021 - Present",
     description: "Researching on the topic of automated data analysis.",
     url: "https://idclab.skku.edu",
+  },
+  {
+    title: "NAVER Corporation",
+    role: "Software Engineer Intern",
+    location: "Seongnam, South Korea",
+    date: "Jan. 2024 - Feb. 2024",
+    description:
+      "Designed and developed automated web color palette recommendation and assignment module for internal product of NAVER Corp.",
+    url: "https://www.navercorp.com",
   },
   {
     title: "Sungkyunkwan University",
@@ -37,20 +38,21 @@ export const en: CareerType[] = [
 
 export const ko: CareerType[] = [
   {
-    title: "네이버",
-    role: "소프트웨어 엔지니어 인턴",
-    location: "성남, 대한민국",
-    date: "2024년 1월 - 현재",
-    description: "LLM 기반 자동 웹 디자인 도구 개발",
-    url: "https://www.navercorp.com",
-  },
-  {
     title: "성균관대학교",
     role: "연구원, 인터랙티브 데이터 컴퓨팅 연구실 (IDCLab)",
     location: "수원, 대한민국",
     date: "2021년 5월 - 현재",
     description: "자동 데이터 분석에 관한 연구 수행",
     url: "https://idclab.skku.edu",
+  },
+  {
+    title: "네이버",
+    role: "소프트웨어 엔지니어 인턴 (nBilly @ ETECH Smart Studio)",
+    location: "성남, 대한민국",
+    date: "2024년 1월 - 2024년 2월",
+    description:
+      "딥러닝 및 강화학습 기반 웹 페이지 색상 추천 및 할당 모듈 개발",
+    url: "https://www.navercorp.com",
   },
   {
     title: "성균관대학교",
