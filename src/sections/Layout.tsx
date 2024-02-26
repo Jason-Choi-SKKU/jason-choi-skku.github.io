@@ -1,8 +1,8 @@
 import { useColor } from "@/hooks/useColor";
 import { useLanguage } from "@/hooks/useLanguage";
 import { PRIMARY_COLOR } from "@/theme";
-import { Image } from "@chakra-ui/next-js";
-import NextImage from "next/image";
+
+import Image from "next/image";
 
 import { socials } from "@/data/socials";
 import {
@@ -170,9 +170,8 @@ export function Header({ aboutData }: { aboutData: AboutType }) {
         borderRadius={"100%"}
       >
         <Image
-          w={{ base: "100px", md: "120px" }}
-          h={{ base: "100px", md: "120px" }}
-          as={NextImage}
+          width={120}
+          height={120}
           src={aboutData.profileImage}
           alt={`Profile Image of ${aboutData.name}`}
           placeholder="blur"
@@ -225,15 +224,14 @@ export function Gallery({ item }: { item: ProjectType }, key: string) {
       bgColor={bgColor}
       boxShadow={"sm"}
     >
-      <Box h={100} position={"static"}>
+      <Box h={100} w={200} position={"relative"} overflow={"hidden"}>
         <Image
-          w={"200px"}
-          h={"100px"}
-          style={{ objectFit: "contain" }}
-          as={NextImage}
+          //   width={200}
+          //   height={100}
+          fill
           src={item.image}
           alt={item.title}
-          position={"static"}
+          style={{ objectFit: "cover" }}
         />
       </Box>
       <Box px={2} pb={4}>
