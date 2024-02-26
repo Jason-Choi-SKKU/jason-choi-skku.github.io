@@ -1,5 +1,6 @@
 import { news } from "@/data/news";
 import { projects } from "@/data/projects";
+import { useColor } from "@/hooks/useColor";
 import { useData } from "@/hooks/useData";
 import {
   Box,
@@ -10,10 +11,7 @@ import {
   Text,
   useToken,
 } from "@chakra-ui/react";
-import { Card, Gallery } from "./Layout";
-import { Image } from "@chakra-ui/next-js";
-import NextImage from "next/image";
-import { useColor } from "@/hooks/useColor";
+import { Gallery } from "./Layout";
 
 export function About({ aboutData }: { aboutData: AboutType }) {
   const { accentColor } = useColor();
