@@ -22,7 +22,7 @@ export const en: CareerType[] = [
     location: "Suwon, South Korea",
     date: "Sep. 2022 - Dec. 2023",
     description:
-      "Introduction to HCI (2022 Fall, 2023 Falll), Open Source Software Practive (2022 Fall), Information Visualization (2023 Spring)",
+      "Introduction to HCI (2022 Fall, 2023 Falll), Open Source Software Practive (2022 Fall), Information Visualization (2023 Spring), Data Structures (2024 Spring)",
     url: "https://cse.skku.edu",
   },
   {
