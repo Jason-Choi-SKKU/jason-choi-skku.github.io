@@ -2,11 +2,14 @@ import { Gallery } from "@/components";
 import { news } from "@/data/news";
 import { projects } from "@/data/projects";
 import { Box, Flex, Heading, List, ListItem, Text } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 
-export function About({ aboutData }: { aboutData: AboutType }) {
-  const { locale } = useRouter();
-
+export function About({
+  aboutData,
+  locale,
+}: {
+  aboutData: AboutType;
+  locale: Language;
+}) {
   const newsData = news[locale as Language] as NewsType[];
   const projectData = projects[locale as Language] as ProjectType[];
 

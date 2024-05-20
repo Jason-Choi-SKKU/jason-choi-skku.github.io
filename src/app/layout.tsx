@@ -1,16 +1,18 @@
 import { theme } from "@/theme";
 import { ColorModeScript } from "@chakra-ui/react";
-import { Html, Head, Main, NextScript } from "next/document";
+import Providers from "./providers";
 
-export default function Document() {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Html lang="en">
-      <Head />
+    <html lang="en">
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <Main />
-        <NextScript />
+        <Providers>{children}</Providers>
       </body>
-    </Html>
+    </html>
   );
 }

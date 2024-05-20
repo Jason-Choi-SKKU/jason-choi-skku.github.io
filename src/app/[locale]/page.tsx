@@ -1,22 +1,32 @@
-import { Box, Container, Flex, List } from "@chakra-ui/react";
-import Head from "next/head";
+"use client";
 
+import {
+  Box,
+  Container,
+  Flex,
+  List,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
+
+import { Card, Footer, Header, NavigationItem } from "@/components/Layout";
 import { about } from "@/data/about";
 import { navigations } from "@/data/navigations";
-import { useColor } from "@/hooks/useColor";
 import { useLayoutScroll } from "@/hooks/useLayoutScroll";
+import { About } from "@/sections/About";
 import Educations from "@/sections/Educations";
 import Experiences from "@/sections/Experiences";
 import Honors from "@/sections/Honors";
-import { Card, Footer, Header, NavigationItem } from "@/components/Layout";
 import Publications from "@/sections/Publications";
-import { About } from "@/sections/About";
-import { useRouter } from "next/router";
 
-export default function Index() {
-  const { locale } = useRouter();
+export default function Index({
+  params: { locale },
+}: {
+  params: { locale: Language };
+}) {
   const aboutData = about[locale as Language] as AboutType;
-  const { bgColor, sectionColor } = useColor();
+  const bgColor = useColorModeValue("gray.100", "gray.900");
+  const sectionColor = useColorModeValue("white", "gray.800");
   const {
     currentSection,
     sectionHandler,
@@ -28,11 +38,6 @@ export default function Index() {
 
   return (
     <Container maxW={"container.xl"} p={{ base: 0, md: 8 }}>
-      <Head>
-        <title>{aboutData.pageTitle}</title>
-        <meta name="description" content={aboutData.pageDescription} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <Flex flexDir={{ base: "column", md: "row" }}>
         <Flex
           minW={{ base: 0, md: "280px" }}
@@ -95,7 +100,7 @@ export default function Index() {
                 sectionRef.current[0] = el!;
               }}
             >
-              <About aboutData={aboutData} />
+              <About locale={locale} aboutData={aboutData} />
             </Box>
             {sections.map(({ id, Component }, idx) => (
               <Box
@@ -105,7 +110,7 @@ export default function Index() {
                   sectionRef.current[idx + 1] = el!;
                 }}
               >
-                <Component />
+                <Component locale={locale} />
               </Box>
             ))}
           </Card>

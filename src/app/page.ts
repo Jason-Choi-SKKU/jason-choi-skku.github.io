@@ -1,3 +1,5 @@
+import { FlexProps } from "@chakra-ui/react";
+
 type CareerType = {
   title: string;
   role: string;
@@ -58,6 +60,6 @@ type ProjectType = {
   content: MDXContent;
 };
 
-type FlexWithLanguageProps = {
+type FlexWithLanguageProps = FlexProps & {
   locale: Language;
-} & import("@chakra-ui/react").FlexProps;
+};

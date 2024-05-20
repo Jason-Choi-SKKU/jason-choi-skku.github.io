@@ -1,11 +1,10 @@
 import { experiences } from "@/data/experiences";
 import { Flex, Heading, List } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+import { FlexWithLanguageProps } from "../app/page";
 import { CareerItem } from "../components/Layout";
 
-export default function Experiences(props: any) {
-  const { locale } = useRouter();
-  const exps = experiences[locale as Language] as CareerType[];
+export default function Experiences(props: FlexWithLanguageProps) {
+  const exps = experiences[props.locale] as CareerType[];
 
   return (
     <Flex gap={4} direction={"column"} {...props}>

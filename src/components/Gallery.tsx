@@ -2,11 +2,11 @@ import { Box, Text, useColorMode, useDisclosure } from "@chakra-ui/react";
 import { Card } from "./Layout";
 import Image from "next/image";
 import ProjectModal from "./ProjectModal";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Gallery({ item }: { item: ProjectType }, key: string) {
   const { colorMode } = useColorMode();
-  const router = useRouter();
+  // const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Card

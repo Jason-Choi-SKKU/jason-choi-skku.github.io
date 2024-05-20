@@ -1,11 +1,9 @@
 import { educations } from "@/data/educations";
 import { Flex, Heading, List } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 import { CareerItem } from "../components/Layout";
 
-export default function Educations(props: any) {
-  const { locale } = useRouter();
-  const edus = educations[locale as Language] as CareerType[];
+export default function Educations(props: FlexWithLanguageProps) {
+  const edus = educations[props.locale] as CareerType[];
 
   return (
     <Flex gap={4} direction={"column"} {...props}>
