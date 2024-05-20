@@ -4,15 +4,7 @@ import {
   localStorageManager,
 } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
-import { theme } from "../theme";
-
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <Chakra cookies={pageProps.cookies}>
-      <Component {...pageProps} />
-    </Chakra>
-  );
-}
+import { theme } from "@/theme";
 
 function Chakra({ cookies, children }: any) {
   const colorModeManager =
@@ -24,6 +16,14 @@ function Chakra({ cookies, children }: any) {
     <ChakraProvider colorModeManager={colorModeManager} theme={theme}>
       {children}
     </ChakraProvider>
+  );
+}
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <Chakra cookies={pageProps.cookies}>
+      <Component {...pageProps} />
+    </Chakra>
   );
 }
 

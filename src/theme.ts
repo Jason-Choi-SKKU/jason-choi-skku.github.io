@@ -1,4 +1,8 @@
-import { defineStyleConfig, extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import {
+  defineStyleConfig,
+  extendTheme,
+  withDefaultColorScheme,
+} from "@chakra-ui/react";
 import { StyleFunctionProps, mode } from "@chakra-ui/theme-tools";
 
 export const PRIMARY_COLOR = "orange";
@@ -13,39 +17,42 @@ export const PRIMARY = {
   700: `${PRIMARY_COLOR}.700`,
   800: `${PRIMARY_COLOR}.800`,
   900: `${PRIMARY_COLOR}.900`,
-}
+};
 
 export const theme = extendTheme(
   {
-    initialColorMode: "system",
-    useSystemColorMode: true,
+    config: {
+      initialColorMode: "system",
+      useSystemColorMode: true,
+    },
     styles: {
       global: (props: StyleFunctionProps) => ({
         body: {
-          bg: mode("gray.100", "gray.900")(props),
+          bg: props.colorMode === "dark" ? "gray.900" : "gray.100",
           w: "100vw",
         },
       }),
     },
     components: {
       Card: defineStyleConfig({
-        baseStyle: props => ({
+        baseStyle: (props) => ({
           display: "flex",
           flexDir: "column",
           borderRadius: 16,
           p: { base: 4, md: 8 },
-          bg: mode("white", "gray.800")(props),
+
+          bg: props.colorMode === "dark" ? "gray.800" : "white",
           boxShadow: mode("sm", "dark-sm")(props),
           gap: 2,
         }),
       }),
       Heading: defineStyleConfig({
-        baseStyle: props => ({
+        baseStyle: (props) => ({
           color: mode(PRIMARY[500], PRIMARY[200])(props),
         }),
       }),
       Mark: defineStyleConfig({
-        baseStyle: props => ({
+        baseStyle: (props) => ({
           bgColor: mode(PRIMARY[100], PRIMARY[900])(props),
           color: mode(PRIMARY[600], PRIMARY[100])(props),
           fontWeight: 600,
