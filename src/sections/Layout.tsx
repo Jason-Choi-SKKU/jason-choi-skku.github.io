@@ -222,8 +222,7 @@ export function Gallery({ item }: { item: ProjectType }, key: string) {
     >
       <Box h={100} w={200} position={"relative"} overflow={"hidden"}>
         <Image
-          //   width={200}
-          //   height={100}
+          sizes="200"
           fill
           src={item.image}
           alt={item.title}

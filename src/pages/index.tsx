@@ -54,6 +54,7 @@ export default function Index() {
               boxShadow={isOpen ? "xs" : "none"}
               borderRadius={isOpen ? 16 : 0}
               position={isOpen ? "static" : "fixed"}
+              zIndex={999}
               bgColor={isOpen ? sectionColor : bgColor}
               top={0}
               transition="background-color 0.2s linear, box-shadow 0.2s linear, border-radius 0.2s linear"
