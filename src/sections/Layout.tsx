@@ -110,7 +110,8 @@ export const NavigationItem = (props: any) => (
 
 export function Footer() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { locale, push } = useRouter();
+  // const { locale, push } = useRouter();
+  const router = useRouter();
   return (
     <Center flexDir={"column"} gap={2} py={4}>
       <Flex
@@ -126,10 +127,10 @@ export function Footer() {
           variant="outline"
           border={0}
           colorScheme="gray"
-          value={locale}
+          value={router.locale}
           color="gray"
           onChange={(e) => {
-            push("/", "/", { locale: e.target.value });
+            router.push("/", "/", { locale: e.target.value });
           }}
         >
           <option value="en">English</option>
