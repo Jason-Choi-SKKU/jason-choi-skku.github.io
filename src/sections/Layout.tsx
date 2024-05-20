@@ -130,7 +130,7 @@ export function Footer() {
           value={router.locale}
           color="gray"
           onChange={(e) => {
-            router.push("/", "/", { locale: e.target.value });
+            router.replace("/", "/", { locale: e.target.value });
           }}
         >
           <option value="en">English</option>
