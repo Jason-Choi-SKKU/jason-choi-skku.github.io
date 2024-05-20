@@ -8,7 +8,7 @@ import { theme } from "../theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Chakra>
+    <Chakra cookies={pageProps.cookies}>
       <Component {...pageProps} />
     </Chakra>
   );
