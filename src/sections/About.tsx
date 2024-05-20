@@ -1,20 +1,10 @@
+import { Gallery } from "@/components";
 import { news } from "@/data/news";
 import { projects } from "@/data/projects";
-import { useColor } from "@/hooks/useColor";
-import {
-  Box,
-  Flex,
-  Heading,
-  List,
-  ListItem,
-  Text,
-  useToken,
-} from "@chakra-ui/react";
-import { Gallery } from "./Layout";
+import { Box, Flex, Heading, List, ListItem, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 export function About({ aboutData }: { aboutData: AboutType }) {
-  const { accentColor } = useColor();
   const { locale } = useRouter();
 
   const newsData = news[locale as Language] as NewsType[];

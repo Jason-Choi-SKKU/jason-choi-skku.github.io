@@ -1,7 +1,7 @@
 import { educations } from "@/data/educations";
 import { Flex, Heading, List } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { CareerItem } from "./Layout";
+import { CareerItem } from "../components/Layout";
 
 export default function Educations(props: any) {
   const { locale } = useRouter();

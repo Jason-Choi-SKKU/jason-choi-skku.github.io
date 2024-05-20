@@ -8,7 +8,7 @@ import { useLayoutScroll } from "@/hooks/useLayoutScroll";
 import Educations from "@/sections/Educations";
 import Experiences from "@/sections/Experiences";
 import Honors from "@/sections/Honors";
-import { Card, Footer, Header, NavigationItem } from "@/sections/Layout";
+import { Card, Footer, Header, NavigationItem } from "@/components/Layout";
 import Publications from "@/sections/Publications";
 import { About } from "@/sections/About";
 import { useRouter } from "next/router";

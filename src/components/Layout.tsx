@@ -207,36 +207,3 @@ export function Header({ aboutData }: { aboutData: AboutType }) {
     </Card>
   );
 }
-
-export function Gallery({ item }: { item: ProjectType }, key: string) {
-  const { colorMode } = useColorMode();
-  return (
-    <Card
-      overflow={"hidden"}
-      borderRadius={"md"}
-      key={key}
-      minW={200}
-      p={0}
-      mb={2}
-      gap={2}
-      boxShadow={"sm"}
-      backgroundColor={colorMode === "light" ? "gray.50" : "gray.900"}
-    >
-      <Box h={100} w={200} position={"relative"} overflow={"hidden"}>
-        <Image
-          sizes="200"
-          fill
-          src={item.image}
-          alt={item.title}
-          style={{ objectFit: "cover" }}
-        />
-      </Box>
-      <Box px={2} pb={4}>
-        <Text fontWeight={700} size={"md"}>
-          {item.title}
-        </Text>
-        <Text fontSize={"xs"}>{item.description}</Text>
-      </Box>
-    </Card>
-  );
-}

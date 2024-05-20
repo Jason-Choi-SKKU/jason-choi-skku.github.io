@@ -29,9 +29,7 @@ export const theme = extendTheme(
       global: (props: StyleFunctionProps) => ({
         body: {
           bg: mode("gray.50", "gray.900")(props),
-          w: "100%",
-          m: 0,
-          p: 0,
+
           "&::-webkit-scrollbar": {
             width: "6px",
             height: "6px",
