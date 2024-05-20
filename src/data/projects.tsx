@@ -1,3 +1,5 @@
+import bavisitter_img from "@/data/project/bavisitter.png";
+import bavisitter_mdx from "@/data/project/bavisitter.mdx";
 import waltzboard_img from "@/data/project/waltzboard.jpg";
 import waltzboard_mdx from "@/data/project/waltzboard.mdx";
 import intentable_img from "@/data/project/intentable.png";
@@ -10,6 +12,13 @@ import vanas from "@/data/project/vanas.png";
 import vanas_mdx from "@/data/project/vanas.mdx";
 
 const en: ProjectType[] = [
+  {
+    title: "Bavisitter",
+    description:
+      "Integrating Design Guidelines into Large Language Models for Visualization Authoring",
+    image: bavisitter_img,
+    content: bavisitter_mdx,
+  },
   {
     title: "Waltzboard",
     description: "Instant and Interpretable Dashboard with User Intent",
