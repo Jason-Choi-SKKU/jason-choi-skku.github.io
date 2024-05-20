@@ -23,7 +23,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa6";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 type CareerItemProps = {
   career: CareerType;
