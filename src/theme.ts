@@ -22,7 +22,7 @@ export const PRIMARY = {
 export const theme = extendTheme(
   {
     config: {
-      initialColorMode: "system",
+      initialColorMode: "dark",
       useSystemColorMode: true,
     },
     styles: {
