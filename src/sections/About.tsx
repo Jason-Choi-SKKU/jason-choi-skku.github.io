@@ -15,7 +15,6 @@ import { useRouter } from "next/router";
 
 export function About({ aboutData }: { aboutData: AboutType }) {
   const { accentColor } = useColor();
-  const [scrollColor] = useToken("colors", [accentColor]);
   const { locale } = useRouter();
 
   const newsData = news[locale as Language] as NewsType[];
@@ -43,23 +42,7 @@ export function About({ aboutData }: { aboutData: AboutType }) {
         Featured Projects
       </Heading>
       <Box w="full">
-        <Flex
-          gap={4}
-          overflowX="scroll"
-          css={{
-            "&::-webkit-scrollbar": {
-              width: "10px",
-              height: "10px",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: scrollColor,
-              borderRadius: "10px",
-            },
-            "&::-webkit-scrollbar-track": {
-              backgroundColor: "transparent",
-            },
-          }}
-        >
+        <Flex gap={4} overflowX="scroll">
           {projectData.map((item, index) => (
             <Gallery item={item} key={`project${index}`} />
           ))}

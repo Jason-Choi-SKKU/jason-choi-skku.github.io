@@ -28,8 +28,33 @@ export const theme = extendTheme(
     styles: {
       global: (props: StyleFunctionProps) => ({
         body: {
-          bg: props.colorMode === "dark" ? "gray.900" : "gray.100",
-          w: "100vw",
+          bg: mode("gray.50", "gray.900")(props),
+          w: "100%",
+          m: 0,
+          p: 0,
+          "&::-webkit-scrollbar": {
+            width: "6px",
+            height: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "transparent",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "transparent",
+          },
+        },
+        div: {
+          "&::-webkit-scrollbar": {
+            width: "6px",
+            height: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: mode(PRIMARY[500], PRIMARY[200])(props),
+            borderRadius: "6px",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "transparent",
+          },
         },
       }),
     },
@@ -40,8 +65,7 @@ export const theme = extendTheme(
           flexDir: "column",
           borderRadius: 16,
           p: { base: 4, md: 8 },
-
-          bg: props.colorMode === "dark" ? "gray.800" : "white",
+          bg: mode("white", "gray.800")(props),
           boxShadow: mode("sm", "dark-sm")(props),
           gap: 2,
         }),

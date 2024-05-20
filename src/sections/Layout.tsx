@@ -23,7 +23,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 type CareerItemProps = {
   career: CareerType;
@@ -110,8 +110,7 @@ export const NavigationItem = (props: any) => (
 
 export function Footer() {
   const { colorMode, toggleColorMode } = useColorMode();
-  // const { locale, push } = useRouter();
-  const router = useRouter();
+  const { push, locale } = useRouter();
   return (
     <Center flexDir={"column"} gap={2} py={4}>
       <Flex
@@ -127,10 +126,10 @@ export function Footer() {
           variant="outline"
           border={0}
           colorScheme="gray"
-          value={router.locale}
+          value={locale}
           color="gray"
           onChange={(e) => {
-            router.replace("/", "/", { locale: e.target.value });
+            push("/", "/", { locale: e.target.value });
           }}
         >
           <option value="en">English</option>
@@ -210,6 +209,7 @@ export function Header({ aboutData }: { aboutData: AboutType }) {
 }
 
 export function Gallery({ item }: { item: ProjectType }, key: string) {
+  const { colorMode } = useColorMode();
   return (
     <Card
       overflow={"hidden"}
@@ -220,6 +220,7 @@ export function Gallery({ item }: { item: ProjectType }, key: string) {
       mb={2}
       gap={2}
       boxShadow={"sm"}
+      backgroundColor={colorMode === "light" ? "gray.50" : "gray.900"}
     >
       <Box h={100} w={200} position={"relative"} overflow={"hidden"}>
         <Image
