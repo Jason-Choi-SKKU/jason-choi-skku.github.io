@@ -4,7 +4,6 @@ import Head from "next/head";
 import { about } from "@/data/about";
 import { navigations } from "@/data/navigations";
 import { useColor } from "@/hooks/useColor";
-import { useData } from "@/hooks/useData";
 import { useLayoutScroll } from "@/hooks/useLayoutScroll";
 import Educations from "@/sections/Educations";
 import Experiences from "@/sections/Experiences";
@@ -12,9 +11,11 @@ import Honors from "@/sections/Honors";
 import { Card, Footer, Header, NavigationItem } from "@/sections/Layout";
 import Publications from "@/sections/Publications";
 import { About } from "@/sections/About";
+import { useRouter } from "next/router";
 
 export default function Index() {
-  const aboutData = useData<AboutType>(about);
+  const { locale } = useRouter();
+  const aboutData = about[locale as Language] as AboutType;
   const { bgColor, sectionColor } = useColor();
   const {
     currentSection,

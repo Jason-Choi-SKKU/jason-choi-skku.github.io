@@ -43,4 +43,4 @@ const en: ProjectType[] = [
   },
 ];
 
-export const projects = { en };
+export const projects = { en, ko: en };

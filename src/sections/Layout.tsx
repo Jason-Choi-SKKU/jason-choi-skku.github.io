@@ -1,5 +1,3 @@
-import { useColor } from "@/hooks/useColor";
-import { useLanguage } from "@/hooks/useLanguage";
 import { PRIMARY_COLOR } from "@/theme";
 
 import Image from "next/image";
@@ -20,10 +18,12 @@ import {
   ListItem,
   Select,
   Text,
+  useColorMode,
   useStyleConfig,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa6";
+import { useRouter } from "next/router";
 
 type CareerItemProps = {
   career: CareerType;
@@ -109,8 +109,8 @@ export const NavigationItem = (props: any) => (
 );
 
 export function Footer() {
-  const { colorMode, toggleColorMode, bgColor } = useColor();
-  const { language, setLanguage } = useLanguage();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const { locale, push } = useRouter();
   return (
     <Center flexDir={"column"} gap={2} py={4}>
       <Flex
@@ -120,18 +120,16 @@ export function Footer() {
         flexDir="row"
         gap={2}
         zIndex={1}
-        bgColor={bgColor}
       >
         <Select
           size="sm"
           variant="outline"
           border={0}
           colorScheme="gray"
-          value={language}
+          value={locale}
           color="gray"
           onChange={(e) => {
-            setLanguage(e.target.value as Language);
-            window.location.reload();
+            push("/", "/", { locale: e.target.value });
           }}
         >
           <option value="en">English</option>
@@ -211,7 +209,6 @@ export function Header({ aboutData }: { aboutData: AboutType }) {
 }
 
 export function Gallery({ item }: { item: ProjectType }, key: string) {
-  const { bgColor } = useColor();
   return (
     <Card
       overflow={"hidden"}
@@ -221,7 +218,6 @@ export function Gallery({ item }: { item: ProjectType }, key: string) {
       p={0}
       mb={2}
       gap={2}
-      bgColor={bgColor}
       boxShadow={"sm"}
     >
       <Box h={100} w={200} position={"relative"} overflow={"hidden"}>

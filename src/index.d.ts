@@ -38,7 +38,7 @@ type AboutType = {
   profileImage: StaticImageData;
 };
 
-type Language = "en" | "ko" | "es";
+type Language = "en" | "ko";
 
 type I18nData = {
   [key in Language]?: any;
@@ -49,11 +49,11 @@ type I18nData = {
 type NewsType = {
   date: string;
   description: string;
-}
+};
 
 type ProjectType = {
   title: string;
   description: string;
   image: StaticImageData;
   content: MDXContent;
-}
+};

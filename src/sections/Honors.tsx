@@ -1,10 +1,11 @@
 import { honors } from "@/data/honors";
-import { useData } from "@/hooks/useData";
 import { Flex, Heading, List } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { CareerItem } from "./Layout";
 
 export default function Honors(props: any) {
-  const hos = useData<CareerType[]>(honors);
+  const { locale } = useRouter();
+  const hos = honors[locale as Language] as CareerType[];
   return (
     <Flex gap={4} direction={"column"} {...props}>
       <Heading as="h1">Honors & Awards</Heading>

@@ -1,7 +1,6 @@
 import { news } from "@/data/news";
 import { projects } from "@/data/projects";
 import { useColor } from "@/hooks/useColor";
-import { useData } from "@/hooks/useData";
 import {
   Box,
   Flex,
@@ -12,12 +11,15 @@ import {
   useToken,
 } from "@chakra-ui/react";
 import { Gallery } from "./Layout";
+import { useRouter } from "next/router";
 
 export function About({ aboutData }: { aboutData: AboutType }) {
   const { accentColor } = useColor();
   const [scrollColor] = useToken("colors", [accentColor]);
-  const newsData = useData<NewsType[]>(news);
-  const projectData = useData<ProjectType[]>(projects);
+  const { locale } = useRouter();
+
+  const newsData = news[locale as Language] as NewsType[];
+  const projectData = projects[locale as Language] as ProjectType[];
 
   return (
     <Flex flexDir={"column"} gap={4}>

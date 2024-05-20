@@ -2,8 +2,6 @@ import { authors } from "@/data/authors";
 import { publications } from "@/data/publications";
 import {
   Box,
-  Button,
-  ButtonGroup,
   Center,
   Flex,
   Heading,
