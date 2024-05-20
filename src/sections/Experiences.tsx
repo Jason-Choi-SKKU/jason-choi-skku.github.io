@@ -1,6 +1,5 @@
 import { experiences } from "@/data/experiences";
 import { Flex, Heading, List } from "@chakra-ui/react";
-import { FlexWithLanguageProps } from "../app/page";
 import { CareerItem } from "../components/Layout";
 
 export default function Experiences(props: FlexWithLanguageProps) {

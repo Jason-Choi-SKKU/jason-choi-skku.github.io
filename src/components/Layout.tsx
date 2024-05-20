@@ -23,6 +23,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FaMoon, FaSun } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 type CareerItemProps = {
   career: CareerType;
@@ -107,8 +108,9 @@ export const NavigationItem = (props: any) => (
   </Button>
 );
 
-export function Footer() {
+export function Footer({ locale }: { locale: Language }) {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { push } = useRouter();
   return (
     <Center flexDir={"column"} gap={2} py={4}>
       <Flex
@@ -124,10 +126,10 @@ export function Footer() {
           variant="outline"
           border={0}
           colorScheme="gray"
-          value={"en"}
+          value={locale}
           color="gray"
           onChange={(e) => {
-            // push("/", "/", { locale: e.target.value });
+            push(`/${e.target.value}`);
           }}
         >
           <option value="en">English</option>
