@@ -47,9 +47,6 @@ function ProjectModal({
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>{children}</ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-          </ModalFooter>
         </ModalContent>
       </Portal>
     </Modal>

@@ -30,6 +30,7 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
           src={item.image}
           alt={item.title}
           style={{ objectFit: "cover" }}
+          placeholder="blur"
         />
       </Box>
       <Box px={2} pb={4}>
