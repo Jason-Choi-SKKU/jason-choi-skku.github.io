@@ -22,10 +22,10 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
         cursor: "pointer",
       }}
     >
-      <Box h={100} w={200} position={"relative"} overflow={"hidden"}>
+      <Box h={100} w={"full"} position={"relative"} overflow={"hidden"}>
         <Image
-          sizes="200"
           fill
+          sizes="200px"
           src={item.image}
           alt={item.title}
           style={{ objectFit: "cover" }}

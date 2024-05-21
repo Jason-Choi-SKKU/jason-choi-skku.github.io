@@ -56,6 +56,7 @@ type ProjectType = {
   description: string;
   image: StaticImageData;
   content: MDXContent;
+  selected: boolean;
 };
 
 type FlexWithLanguageProps = {

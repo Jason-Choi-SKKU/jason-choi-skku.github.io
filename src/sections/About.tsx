@@ -1,7 +1,21 @@
+"use client";
+
 import { Gallery } from "@/components";
 import { news } from "@/data/news";
 import { projects } from "@/data/projects";
-import { Box, Flex, Heading, List, ListItem, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Icon,
+  List,
+  ListItem,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
+import { useState } from "react";
+import { FaExpand } from "react-icons/fa6";
 
 export function About({
   aboutData,
@@ -12,6 +26,7 @@ export function About({
 }) {
   const newsData = news[locale as Language] as NewsType[];
   const projectData = projects[locale as Language] as ProjectType[];
+  const [projectExpanded, setProjectExpanded] = useState<boolean>(false);
 
   return (
     <Flex flexDir={"column"} gap={4}>
@@ -31,15 +46,37 @@ export function About({
           </ListItem>
         ))}
       </List>
-      <Heading as="h2" size={"md"}>
-        Featured Projects
-      </Heading>
+      <Flex justifyContent={"space-between"}>
+        <Heading as="h2" size={"md"}>
+          {projectExpanded ? "All Projects" : "Selected Projects"}
+        </Heading>
+        <Button
+          size={"xs"}
+          variant={"ghost"}
+          leftIcon={
+            projectExpanded ? <Icon as={FaExpand} /> : <Icon as={FaExpand} />
+          }
+          onClick={() => setProjectExpanded(!projectExpanded)}
+        >
+          {projectExpanded ? "View Selected" : "View All"}
+        </Button>
+      </Flex>
       <Box w="full">
-        <Flex gap={4} overflowX="scroll">
-          {projectData.map((item, index) => (
-            <Gallery item={item} key={`project${index}`} />
-          ))}
-        </Flex>
+        {projectExpanded ? (
+          <SimpleGrid minChildWidth={200} spacing={4}>
+            {projectData.map((item, index) => (
+              <Gallery item={item} key={`project${index}`} />
+            ))}
+          </SimpleGrid>
+        ) : (
+          <Flex gap={4} overflowX="scroll">
+            {projectData
+              .filter((item) => item.selected)
+              .map((item, index) => (
+                <Gallery item={item} key={`project${index}`} />
+              ))}
+          </Flex>
+        )}
       </Box>
     </Flex>
   );
