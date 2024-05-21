@@ -5,6 +5,7 @@ export const publications: PubType[] = [
     authorNames: ["Jiwon Choi", "Jaeung Lee", "Jaemin Jo"],
     venue: ["Preprint (Under-Review)"],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
+    videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
   },
   {
     title: "Waltzboard: Multi-Criteria Automated Dashboard Design",
