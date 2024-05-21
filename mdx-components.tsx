@@ -1,6 +1,7 @@
 import { PRIMARY } from "@/theme";
 import { Box, Heading, Text, useColorMode } from "@chakra-ui/react";
 import type { MDXComponents } from "mdx/types";
+import Link from "next/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   const { colorMode } = useColorMode();
@@ -26,8 +27,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </Text>
     ),
+    a: ({ href, children }) => (
+      <Link href={href ?? "/"}>
+        <Text as={"span"} textDecoration={"underline"}>
+          {children}
+        </Text>
+      </Link>
+    ),
     strong: ({ children }) => (
-      <Text as={"strong"} fontSize={"md"}>
+      <Text as={"strong"} fontSize={"sm"}>
         {children}
       </Text>
     ),

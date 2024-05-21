@@ -31,7 +31,7 @@ function ProjectModal({
     <Modal isOpen={isOpen} onClose={onClose} size={"4xl"}>
       <ModalOverlay />
       <Portal>
-        <ModalContent>
+        <ModalContent mx={4}>
           <ModalHeader>
             <Heading as="h2" size="md">
               {title}

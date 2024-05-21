@@ -18,6 +18,9 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
       boxShadow={"sm"}
       backgroundColor={colorMode === "light" ? "gray.50" : "gray.900"}
       onClick={onOpen}
+      _hover={{
+        cursor: "pointer",
+      }}
     >
       <Box h={100} w={200} position={"relative"} overflow={"hidden"}>
         <Image
