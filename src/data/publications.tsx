@@ -3,13 +3,13 @@ export const publications: PubType[] = [
     title:
       "Bavisitter: Integrating Design Guidelines into Large Language Models for Visualization Authoring",
     authorNames: ["Jiwon Choi", "Jaeung Lee", "Jaemin Jo"],
-    venue: ["Preprint"],
+    venue: ["Preprint (Under-Review)"],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
   },
   {
     title: "Waltzboard: Multi-Criteria Automated Dashboard Design",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
-    venue: ["Preprint"],
+    venue: ["Preprint (Under-Review)"],
     githubLink: "https://github.com/jiwnchoi/waltzboard",
   },
   {
