@@ -22,7 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </Heading>
     ),
     p: ({ children }) => (
-      <Text as={"p"} fontSize={"md"} lineHeight={1.5} mb={4}>
+      <Text as={"p"} fontSize={"sm"} lineHeight={1.5} mb={4}>
         {children}
       </Text>
     ),

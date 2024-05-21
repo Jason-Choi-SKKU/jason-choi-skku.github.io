@@ -1,12 +1,10 @@
 import { Box, Text, useColorMode, useDisclosure } from "@chakra-ui/react";
-import { Card } from "./Layout";
 import Image from "next/image";
+import { Card } from "./Layout";
 import ProjectModal from "./ProjectModal";
-import { useRouter } from "next/navigation";
 
 export default function Gallery({ item }: { item: ProjectType }, key: string) {
   const { colorMode } = useColorMode();
-  // const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Card
@@ -38,6 +36,7 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
       </Box>
       <ProjectModal
         title={item.title}
+        description={item.description}
         isOpen={isOpen}
         onClose={onClose}
         onOpen={onOpen}

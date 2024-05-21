@@ -1,0 +1,25 @@
+import { Center } from "@chakra-ui/react";
+import bavisitter_img from "./bavisitter.png";
+import Image from "next/image";
+
+<Center w="full" my={4}>
+  <Image
+    width={600}
+    src={bavisitter_img}
+    alt={"Bavisitter"}
+    style={{ objectFit: "cover" }}
+  />
+</Center>
+
+## Abstract
+
+Large Language Models (LLMs) have demonstrated remarkable versatility
+in visualization authoring, but often generate suboptimal designs that are invalid
+or fail to adhere to design guidelines for effective visualization. We present Bavisitter,
+a natural language interface that integrates established visualization design guidelines
+into LLMs. Based on our survey on the design issues in LLM-generated visualizations,
+Bavisitter monitors the generated visualizations during a visualization authoring
+dialogue to detect an issue. When an issue is detected, it intervenes in the dialogue,
+suggesting possible solutions to the issue by modifying the prompts. We also demonstrate
+two use cases where Bavisitter detects and resolves design issues from the actual
+LLM-generated visualizations.

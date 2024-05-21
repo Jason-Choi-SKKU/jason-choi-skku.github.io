@@ -1,4 +1,5 @@
 import {
+  Heading,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -6,11 +7,13 @@ import {
   ModalHeader,
   ModalOverlay,
   Portal,
+  Text,
 } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
 
 interface IProjectModal {
   title: string;
+  description: string;
   isOpen: boolean;
   onClose: () => void;
   onOpen: () => void;
@@ -18,6 +21,7 @@ interface IProjectModal {
 
 function ProjectModal({
   title,
+  description,
   isOpen,
   onClose,
   onOpen,
@@ -28,7 +32,12 @@ function ProjectModal({
       <ModalOverlay />
       <Portal>
         <ModalContent>
-          <ModalHeader>{title}</ModalHeader>
+          <ModalHeader>
+            <Heading as="h2" size="md">
+              {title}
+            </Heading>
+            <Text fontSize="sm">{description}</Text>
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>{children}</ModalBody>
         </ModalContent>
