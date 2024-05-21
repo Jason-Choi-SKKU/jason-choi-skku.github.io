@@ -1,4 +1,9 @@
-import { Box, List, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  List,
+  useBreakpointValue,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { Card, NavigationItem } from "./Layout";
 import { navigations } from "@/data/navigations";
 
@@ -15,6 +20,11 @@ export default function Navigation({
 }: NavigationProps) {
   const bgColor = useColorModeValue("gray.100", "gray.900");
   const sectionColor = useColorModeValue("white", "gray.800");
+  const label: "label" | "labelShort" =
+    useBreakpointValue(
+      { base: "labelShort", md: "label" },
+      { fallback: "label" }
+    ) ?? "label";
   return (
     <Box minH={{ base: "55.5px", sm: "63.5px" }} px={isOpen ? 2 : 0}>
       <Card
@@ -43,7 +53,7 @@ export default function Navigation({
               key={`sect${idx}`}
               onClick={() => sectionHandler(idx)}
             >
-              {navigation.label}
+              {navigation[label]}
             </NavigationItem>
           ))}
         </List>

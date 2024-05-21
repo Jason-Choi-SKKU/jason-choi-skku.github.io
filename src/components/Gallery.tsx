@@ -11,7 +11,8 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
       overflow={"hidden"}
       borderRadius={"md"}
       key={key}
-      minW={200}
+      w={"full"}
+      minW={180}
       p={0}
       mb={2}
       gap={2}
@@ -25,7 +26,7 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
       <Box h={100} w={"full"} position={"relative"} overflow={"hidden"}>
         <Image
           fill
-          sizes="200px"
+          sizes="180px"
           src={item.image}
           alt={item.title}
           style={{ objectFit: "cover" }}

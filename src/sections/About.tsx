@@ -63,7 +63,7 @@ export function About({
       </Flex>
       <Box w="full">
         {projectExpanded ? (
-          <SimpleGrid minChildWidth={200} spacing={4}>
+          <SimpleGrid minChildWidth={180} spacing={4}>
             {projectData.map((item, index) => (
               <Gallery item={item} key={`project${index}`} />
             ))}
