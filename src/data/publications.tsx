@@ -12,6 +12,7 @@ export const publications: PubType[] = [
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
     venue: ["Preprint (Submitted to VIS 2024)"],
     githubLink: "https://github.com/jiwnchoi/waltzboard",
+    videoDemoLink: "https://youtu.be/sNk_VAV3PAY",
   },
   {
     title:
