@@ -1,9 +1,12 @@
 import { Box, Text, useColorMode, useDisclosure } from "@chakra-ui/react";
 import Image from "next/image";
-import { Card } from "./Layout";
 import ProjectModal from "./ProjectModal";
+import Card from "@/components/Card";
 
-export default function Gallery({ item }: { item: ProjectType }, key: string) {
+export default function ProjectCard(
+  { item }: { item: ProjectType },
+  key: string
+) {
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -12,9 +15,8 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
       borderRadius={"md"}
       key={key}
       w={"full"}
-      minW={180}
+      minW={240}
       p={0}
-      mb={2}
       gap={2}
       boxShadow={"sm"}
       backgroundColor={colorMode === "light" ? "gray.50" : "gray.900"}

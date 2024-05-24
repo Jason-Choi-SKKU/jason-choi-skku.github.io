@@ -7,11 +7,12 @@ import {
   Educations,
   Experiences,
   Honors,
+  Projects,
   Publications,
 } from "@/sections";
 import { Box, Container, Flex } from "@chakra-ui/react";
-import { Card, Footer, Header } from "./Layout";
-import Navigation from "./Navigation";
+import Navigation from "../components/Navigation";
+import { Card, Footer, Header } from "@/components";
 
 export default function Main({ locale }: { locale: Language }) {
   const aboutData = about[locale as Language] as AboutType;
@@ -55,25 +56,47 @@ export default function Main({ locale }: { locale: Language }) {
           px={2}
         >
           <Card gap={8} w="full">
-            <Box
+            <Flex
+              w="full"
+              flexDir={"column"}
+              gap={8}
               id="about"
               ref={(el) => {
                 sectionRef.current[0] = el!;
               }}
             >
-              <About locale={locale} aboutData={aboutData} />
-            </Box>
-            {sections.map(({ id, Component }, idx) => (
-              <Box
-                key={id}
-                id={id}
-                ref={(el) => {
-                  sectionRef.current[idx + 1] = el!;
-                }}
-              >
-                <Component locale={locale} />
-              </Box>
-            ))}
+              <aboutData.Bio />
+              <About locale={locale} />
+              <Projects locale={locale} />
+            </Flex>
+            <Flex
+              ref={(el) => {
+                sectionRef.current[1] = el!;
+              }}
+            >
+              <Experiences locale={locale} />
+            </Flex>
+            <Flex
+              ref={(el) => {
+                sectionRef.current[2] = el!;
+              }}
+            >
+              <Educations locale={locale} />
+            </Flex>
+            <Flex
+              ref={(el) => {
+                sectionRef.current[3] = el!;
+              }}
+            >
+              <Publications locale={locale} />
+            </Flex>
+            <Flex
+              ref={(el) => {
+                sectionRef.current[4] = el!;
+              }}
+            >
+              <Honors locale={locale} />
+            </Flex>
           </Card>
         </Flex>
       </Flex>
@@ -81,10 +104,3 @@ export default function Main({ locale }: { locale: Language }) {
     </Container>
   );
 }
-
-const sections = [
-  { id: "experiences", Component: Experiences },
-  { id: "educations", Component: Educations },
-  { id: "publications", Component: Publications },
-  { id: "honors", Component: Honors },
-];

@@ -1,17 +1,30 @@
+import Card from "@/components/Card";
+import { navigations } from "@/data";
+import { PRIMARY_COLOR } from "@/theme";
 import {
   Box,
+  Button,
   List,
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Card, NavigationItem } from "./Layout";
-import { navigations } from "@/data";
 
 interface NavigationProps {
   isOpen: boolean;
   sectionHandler: (idx: number) => void;
   currentSection: number;
 }
+const NavigationItem = (props: any) => (
+  <Button
+    size={{ base: "xs", sm: "sm", md: "md" }}
+    justifyContent={{ base: "center", md: "flex-start" }}
+    variant={props.selected ? "solid" : "ghost"}
+    colorScheme={props.selected ? PRIMARY_COLOR : "gray"}
+    onClick={props.onClick}
+  >
+    {props.children}
+  </Button>
+);
 
 export default function Navigation({
   isOpen,

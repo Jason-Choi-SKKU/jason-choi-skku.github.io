@@ -1,8 +1,11 @@
+import { CareerItem } from "@/components";
 import { experiences } from "@/data";
 import { Flex, Heading, List } from "@chakra-ui/react";
-import { CareerItem } from "../components/Layout";
+import { PropsWithRef } from "react";
 
-export default function Experiences(props: FlexWithLanguageProps) {
+export default function Experiences(
+  props: PropsWithRef<FlexWithLanguageProps>
+) {
   const exps = experiences[props.locale] as CareerType[];
 
   return (

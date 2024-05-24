@@ -1,8 +1,9 @@
+import { CareerItem } from "@/components";
 import { honors } from "@/data/honors";
 import { Flex, Heading, List } from "@chakra-ui/react";
-import { CareerItem } from "../components/Layout";
+import { PropsWithRef } from "react";
 
-export default function Honors(props: FlexWithLanguageProps) {
+export default function Honors(props: PropsWithRef<FlexWithLanguageProps>) {
   const hos = honors[props.locale as Language] as CareerType[];
   return (
     <Flex gap={4} direction={"column"} {...props}>

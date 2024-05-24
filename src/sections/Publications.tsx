@@ -20,13 +20,7 @@ import {
   FaVideo,
   FaVolumeHigh,
 } from "react-icons/fa6";
-function AuthorNames({
-  authorNames,
-  pKey,
-}: {
-  authorNames: string[];
-  pKey: string;
-}) {
+function AuthorNames({ authorNames }: { authorNames: string[] }) {
   return (
     <>
       {authorNames.map((author, index) => (
@@ -81,7 +75,7 @@ function PubItem(props: any, key: string) {
         {props.pub.title}
       </Text>
 
-      <AuthorNames authorNames={props.pub.authorNames} pKey={key} />
+      <AuthorNames authorNames={props.pub.authorNames} />
 
       {props.pub.venue.map((venue: string) => (
         <Text color={"gray"} fontSize={"sm"} key={venue}>

@@ -2,7 +2,7 @@ import teaser from "./projectionensemble.png";
 import content from "./projectionensemble.mdx";
 
 const project: ProjectType = {
-  title: "Bavisitter",
+  title: "Projection Ensemble",
   description:
     "Visualizing the Robust Structures of Multidimensional Projections",
   teaser,
