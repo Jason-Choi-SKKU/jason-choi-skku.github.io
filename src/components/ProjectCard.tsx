@@ -1,4 +1,10 @@
-import { Box, Text, useColorMode, useDisclosure } from "@chakra-ui/react";
+import {
+  Badge,
+  Box,
+  Text,
+  useColorMode,
+  useDisclosure,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import ProjectModal from "./ProjectModal";
 import Card from "@/components/Card";
@@ -35,15 +41,17 @@ export default function ProjectCard(
           placeholder="blur"
         />
       </Box>
-      <Box px={2} pb={4}>
+      <Box px={2} pb={2}>
+        <Badge colorScheme={item.type === "research" ? "orange" : "blue"}>
+          {item.type}
+        </Badge>
         <Text fontWeight={700} size={"md"}>
           {item.title}
         </Text>
         <Text fontSize={"xs"}>{item.description}</Text>
       </Box>
       <ProjectModal
-        title={item.title}
-        description={item.description}
+        project={item}
         isOpen={isOpen}
         onClose={onClose}
         onOpen={onOpen}

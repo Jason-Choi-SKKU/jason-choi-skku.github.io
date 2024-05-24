@@ -1,6 +1,8 @@
-import { Center } from "@chakra-ui/react";
+import { Center, List } from "@chakra-ui/react";
 import bavisitter_img from "./bavisitter.png";
 import Image from "next/image";
+import { PubItem } from "@/components";
+import { publications } from "@/data";
 
 <Center w="full" mb={4}>
   <Image
@@ -24,3 +26,9 @@ dialogue to detect an issue. When an issue is detected, it intervenes in the dia
 suggesting possible solutions to the issue by modifying the prompts. We also demonstrate
 two use cases where Bavisitter detects and resolves design issues from the actual
 LLM-generated visualizations.
+
+## References
+
+<List p={0} m={0} gap={0}>
+  <PubItem pub={publications.find((pub) => pub.abbr === "bavisitter")} />
+</List>

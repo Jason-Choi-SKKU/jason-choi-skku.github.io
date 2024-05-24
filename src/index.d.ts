@@ -8,6 +8,7 @@ type CareerType = {
 };
 
 type PubType = {
+  abbr: string;
   title: string;
   authorNames: string[];
   venue: string[];
@@ -57,7 +58,8 @@ type ProjectType = {
   teaser: StaticImageData;
   content: MDXContent;
   selected: boolean;
-  type: "paper" | "project";
+  type: "research" | "project";
+  abbr: string;
 };
 
 type FlexWithLanguageProps = {

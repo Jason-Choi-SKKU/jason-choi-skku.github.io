@@ -1,5 +1,6 @@
 export const publications: PubType[] = [
   {
+    abbr: "bavisitter",
     title:
       "Bavisitter: Integrating Design Guidelines into Large Language Models for Visualization Authoring",
     authorNames: ["Jiwon Choi", "Jaeung Lee", "Jaemin Jo"],
@@ -8,6 +9,7 @@ export const publications: PubType[] = [
     videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
   },
   {
+    abbr: "waltzboard",
     title: "Waltzboard: Multi-Criteria Automated Dashboard Design",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
     venue: ["Preprint (Submitted to VIS 2024)"],
@@ -15,6 +17,7 @@ export const publications: PubType[] = [
     videoDemoLink: "https://youtu.be/sNk_VAV3PAY",
   },
   {
+    abbr: "projectionensemble",
     title:
       "Projection Ensemble: Visualizing the Robust Structures of Multidimensional Projections",
     authorNames: ["Myeongwon Jung", "Jiwon Choi", "Jaemin Jo"],
@@ -26,6 +29,7 @@ export const publications: PubType[] = [
     webDemoLink: "https://jjmmwon.github.io/ProjectionEnsemble/",
   },
   {
+    abbr: "gleaner",
     title: "Multi-Criteria Optimization for Automatic Dashboard Design",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
     venue: [
@@ -35,6 +39,7 @@ export const publications: PubType[] = [
     githubLink: "https://github.com/jiwnchoi/waltzboard",
   },
   {
+    abbr: "intentable",
     title:
       "Intentable: A Mixed-Initiative System for Intent-Based Chart Captioning",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
@@ -48,10 +53,11 @@ export const publications: PubType[] = [
     talkLink: "https://youtu.be/Gm8iH2aOlqM",
   },
   {
+    abbr: "vanas",
     title: "VANAS: A Visual Analytics System for Neural Architecture Search",
     authorNames: ["Jiwon Choi", "Gwon Hong", "Jaemin Jo"],
     venue: ["Proceedings of HCI KOREA 2022, Seoul, Korea"],
-    pdfLink: "https://github.com/jiwnchoi-SKKU/VANAS/files/7750682/VANAS.pdf",
+    pdfLink: "https://github.com/jason-choi-SKKU/VANAS/files/7750682/VANAS.pdf",
     githubLink: "https://github.com/jiwnchoi/vanas",
     webDemoLink: "https://jiwnchoi.github.io/VANAS/",
     videoDemoLink: "https://www.youtube.com/watch?v=RCJoIZSVb2A",

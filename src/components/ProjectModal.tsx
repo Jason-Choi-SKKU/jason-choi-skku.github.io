@@ -1,11 +1,13 @@
+import PubItem from "@/components/PubItem";
+import { publications } from "@/data";
 import {
-  Button,
+  Badge,
   Heading,
+  List,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   Portal,
@@ -14,16 +16,14 @@ import {
 import { PropsWithChildren } from "react";
 
 interface IProjectModal {
-  title: string;
-  description: string;
+  project: ProjectType;
   isOpen: boolean;
   onClose: () => void;
   onOpen: () => void;
 }
 
 function ProjectModal({
-  title,
-  description,
+  project: { title, description, type, abbr },
   isOpen,
   onClose,
   onOpen,
@@ -44,9 +44,12 @@ function ProjectModal({
               {title}
             </Heading>
             <Text fontSize="sm">{description}</Text>
+            <Badge colorScheme={type === "research" ? "orange" : "blue"}>
+              {type}
+            </Badge>
           </ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{children}</ModalBody>
+          <ModalBody pb={12}>{children}</ModalBody>
         </ModalContent>
       </Portal>
     </Modal>

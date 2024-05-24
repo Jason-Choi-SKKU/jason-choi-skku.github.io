@@ -1,0 +1,47 @@
+import { Center, Flex } from "@chakra-ui/react";
+import img from "./milk_teaser.png";
+import img1 from "./milk1.png";
+import img2 from "./milk2.png";
+import Image from "next/image";
+import { publications } from "@/data";
+
+<Center w="full" mb={4}>
+  <Image
+    width={600}
+    src={img}
+    alt={"MILK"}
+    style={{ objectFit: "cover" }}
+    placeholder="blur"
+  />
+</Center>
+
+## Project Description
+
+MILK is a Korean context inference quiz based on Word Embedding (FastText). It calculates the Representation Vector of individual words using a Pretrained FastText model. The average vector of these word vectors is considered the Context Vector representing the given context. The word with the highest Cosine Similarity to the Context Vector among the vectors of words forming the context is generated as the blank. The answer choices are generated using the k-Nearest Neighbor algorithm to select words located in similar positions in the vector space as the target word, thereby increasing the difficulty of the questions and allowing learners to combine subtle nuances and contexts of words.
+
+## Interface
+
+<Flex w="full" overflowX="scroll">
+  <Image
+    width={600}
+    src={img1}
+    alt={"MILK Interface 2"}
+    style={{ objectFit: "cover" }}
+    placeholder="blur"
+  />
+  <Image
+    width={600}
+    src={img2}
+    alt={"MILK Interface 2"}
+    style={{ objectFit: "cover" }}
+    placeholder="blur"
+  />
+
+</Flex>
+
+## My Work
+
+- Investigate the feasibility of using FastText for Korean context inference quizzes
+- Design MSA services considering computing resources of servers
+- API design using Flask and FastAPI
+- Develop a web application using React
