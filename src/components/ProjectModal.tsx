@@ -2,6 +2,7 @@ import PubItem from "@/components/PubItem";
 import { publications } from "@/data";
 import {
   Badge,
+  Flex,
   Heading,
   List,
   Modal,
@@ -23,7 +24,7 @@ interface IProjectModal {
 }
 
 function ProjectModal({
-  project: { title, description, type, abbr },
+  project: { title, description, type, abbr, date },
   isOpen,
   onClose,
   onOpen,
@@ -44,9 +45,19 @@ function ProjectModal({
               {title}
             </Heading>
             <Text fontSize="sm">{description}</Text>
-            <Badge colorScheme={type === "research" ? "orange" : "blue"}>
-              {type}
-            </Badge>
+            <Flex>
+              <Badge
+                size={"xs"}
+                colorScheme={type === "research" ? "orange" : "blue"}
+              >
+                {type}
+              </Badge>
+              {date && (
+                <Text fontSize={"xs"} ml={2}>
+                  {date}
+                </Text>
+              )}
+            </Flex>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={12}>{children}</ModalBody>

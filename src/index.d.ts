@@ -60,6 +60,7 @@ type ProjectType = {
   selected: boolean;
   type: "research" | "project";
   abbr: string;
+  date?: string;
 };
 
 type FlexWithLanguageProps = {

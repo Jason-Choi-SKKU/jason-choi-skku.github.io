@@ -65,7 +65,9 @@ export default function Main({ locale }: { locale: Language }) {
                 sectionRef.current[0] = el!;
               }}
             >
-              <aboutData.Bio />
+              <Box>
+                <aboutData.Bio />
+              </Box>
               <About locale={locale} />
               <Projects locale={locale} />
             </Flex>

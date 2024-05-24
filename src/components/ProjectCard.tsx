@@ -1,6 +1,7 @@
 import {
   Badge,
   Box,
+  Flex,
   Text,
   useColorMode,
   useDisclosure,
@@ -42,9 +43,19 @@ export default function ProjectCard(
         />
       </Box>
       <Box px={2} pb={2}>
-        <Badge colorScheme={item.type === "research" ? "orange" : "blue"}>
-          {item.type}
-        </Badge>
+        <Flex>
+          <Badge
+            size={"xs"}
+            colorScheme={item.type === "research" ? "orange" : "blue"}
+          >
+            {item.type}
+          </Badge>
+          {item.date && (
+            <Text fontSize={"xs"} ml={2}>
+              {item.date}
+            </Text>
+          )}
+        </Flex>
         <Text fontWeight={700} size={"md"}>
           {item.title}
         </Text>

@@ -9,6 +9,7 @@ const project: ProjectType = {
   content,
   selected: true,
   type: "research",
+  date: "2023.01 ~ 2024.03",
 };
 
 export default project;

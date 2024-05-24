@@ -10,6 +10,7 @@ const project: ProjectType = {
   content,
   selected: false,
   type: "project",
+  date: "2022.09.24 ~ 25",
 };
 
 export default project;

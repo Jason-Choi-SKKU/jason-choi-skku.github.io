@@ -15,24 +15,28 @@ import Link from "next/link";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   const { colorMode } = useColorMode();
   return {
-    // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => (
-      <Heading as="h1" size={"lg"} mb={1} mt={8}>
+      <Heading as="h1" size={"lg"} my={2}>
         {children}
       </Heading>
     ),
     h2: ({ children }) => (
-      <Heading as="h2" size={"md"} mb={1} mt={8}>
+      <Heading as="h2" size={"md"} my={2}>
         {children}
       </Heading>
     ),
     h3: ({ children }) => (
-      <Heading as="h3" size={"sm"} mb={1} mt={8}>
+      <Heading as="h3" size={"md"} my={2}>
         {children}
       </Heading>
     ),
     p: ({ children }) => (
-      <Text as={"p"} fontSize={"sm"} lineHeight={1.5}>
+      <Text as={"p"} fontSize={"md"} lineHeight={1.5}>
+        {children}
+      </Text>
+    ),
+    span: ({ children }) => (
+      <Text as={"span"} fontSize={"md"}>
         {children}
       </Text>
     ),
@@ -44,27 +48,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </Link>
     ),
     strong: ({ children }) => (
-      <Text as={"strong"} fontSize={"sm"}>
+      <Text as={"strong"} fontSize={"md"}>
         {children}
       </Text>
     ),
-    ol: ({ children }) => (
-      <OrderedList pl={4}>
-        <ListItem as={"li"}>
-          <Text as={"p"} fontSize={"sm"} lineHeight={1.5}>
-            {children}
-          </Text>
-        </ListItem>
-      </OrderedList>
-    ),
-    ul: ({ children }) => (
-      <UnorderedList as={"ul"}>
-        <ListItem as={"li"}>
-          <Text as={"p"} fontSize={"sm"} lineHeight={1.5}>
-            {children}
-          </Text>
-        </ListItem>
-      </UnorderedList>
+    ol: ({ children }) => <OrderedList>{children}</OrderedList>,
+    ul: ({ children }) => <UnorderedList>{children}</UnorderedList>,
+    li: ({ children }) => (
+      <ListItem>
+        <Text as={"p"} fontSize={"md"} lineHeight={1.5}>
+          {children}
+        </Text>
+      </ListItem>
     ),
     blockquote: ({ children }) => (
       <Box
@@ -72,8 +67,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         border={"2px solid"}
         borderColor={colorMode === "light" ? PRIMARY[500] : PRIMARY[200]}
         borderRadius={"md"}
-        p={2}
+        pt={2}
+        pb={4}
         px={4}
+        mb={8}
       >
         {children}
       </Box>
