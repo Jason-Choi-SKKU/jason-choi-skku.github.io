@@ -1,6 +1,4 @@
-import BioEn from "@/data/bio/en.mdx";
-import BioKo from "@/data/bio/ko.mdx";
-import ProfileImage from "@/data/profileImage.png";
+import { BioEn, BioKo, ProfileImage } from "@/data/bio";
 
 const en: AboutType = {
   name: "Jiwon Choi",

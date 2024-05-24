@@ -29,7 +29,7 @@ const educations_ko: CareerType[] = [
     title: "성균관대학교",
     role: "소프트웨어학과 석사과정",
     location: "수원, 대한민국",
-    date: "2023월 9 - 현재",
+    date: "2023년 9월 - 현재 (2025년 2월 졸업 예정)",
     description: "학점: 4.3/4.5",
     url: "https://cse.skku.edu",
   },

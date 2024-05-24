@@ -1,6 +1,6 @@
 "use client";
 
-import { about } from "@/data/about";
+import { about } from "@/data";
 import { useLayoutScroll } from "@/hooks/useLayoutScroll";
 import {
   About,

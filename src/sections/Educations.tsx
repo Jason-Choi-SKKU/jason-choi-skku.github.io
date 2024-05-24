@@ -1,4 +1,4 @@
-import { educations } from "@/data/educations";
+import { educations } from "@/data";
 import { Flex, Heading, List } from "@chakra-ui/react";
 import { CareerItem } from "../components/Layout";
 

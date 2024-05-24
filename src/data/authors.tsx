@@ -1,7 +1,7 @@
 export const authors: AuthorType[] = [
   {
     name: "Jiwon Choi",
-    url: "https://jasonchoi.dev",
+    url: "https://jiwnchoi.me",
   },
   {
     name: "Jaemin Jo",
@@ -13,5 +13,9 @@ export const authors: AuthorType[] = [
   },
   {
     name: "Gwon Hong",
+  },
+  {
+    name: "Jaeung Lee",
+    url: "https://github.com/gnueaj",
   },
 ];

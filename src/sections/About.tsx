@@ -1,8 +1,8 @@
 "use client";
 
 import { Gallery } from "@/components";
-import { news } from "@/data/news";
-import { projects } from "@/data/projects";
+import { news } from "@/data";
+import { projects } from "@/data";
 import {
   Box,
   Button,

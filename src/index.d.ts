@@ -54,9 +54,10 @@ type NewsType = {
 type ProjectType = {
   title: string;
   description: string;
-  image: StaticImageData;
+  teaser: StaticImageData;
   content: MDXContent;
   selected: boolean;
+  type: "paper" | "project";
 };
 
 type FlexWithLanguageProps = {

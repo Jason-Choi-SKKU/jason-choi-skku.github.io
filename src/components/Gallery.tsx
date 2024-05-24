@@ -27,7 +27,7 @@ export default function Gallery({ item }: { item: ProjectType }, key: string) {
         <Image
           fill
           sizes="180px"
-          src={item.image}
+          src={item.teaser}
           alt={item.title}
           style={{ objectFit: "cover" }}
           placeholder="blur"

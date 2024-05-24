@@ -2,7 +2,7 @@ import { PRIMARY_COLOR } from "@/theme";
 
 import Image from "next/image";
 
-import { socials } from "@/data/socials";
+import { socials } from "@/data";
 import {
   As,
   Box,

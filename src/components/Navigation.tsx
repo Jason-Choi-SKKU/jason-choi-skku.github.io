@@ -5,7 +5,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Card, NavigationItem } from "./Layout";
-import { navigations } from "@/data/navigations";
+import { navigations } from "@/data";
 
 interface NavigationProps {
   isOpen: boolean;
