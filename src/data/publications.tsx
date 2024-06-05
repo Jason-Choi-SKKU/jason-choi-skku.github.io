@@ -8,14 +8,13 @@ export const publications: PubType[] = [
     githubLink: "https://github.com/jiwnchoi/bavisitter",
     videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
   },
-  {
-    abbr: "waltzboard",
-    title: "Waltzboard: Multi-Criteria Automated Dashboard Design",
-    authorNames: ["Jiwon Choi", "Jaemin Jo"],
-    venue: ["Preprint (Submitted to VIS 2024)"],
-    githubLink: "https://github.com/jiwnchoi/waltzboard",
-    videoDemoLink: "https://youtu.be/sNk_VAV3PAY",
-  },
+  // {
+  //   abbr: "waltzboard",
+  //   title: "Waltzboard: Multi-Criteria Automated Dashboard Design",
+  //   authorNames: ["Jiwon Choi", "Jaemin Jo"],
+  //   venue: ["Preprint (Submitted to VIS 2024)"],
+  //   githubLink: "https://github.com/jiwnchoi/waltzboard",
+  // },
   {
     abbr: "projectionensemble",
     title:
@@ -37,6 +36,7 @@ export const publications: PubType[] = [
       "Invited to IEEE Pacific Visualization Symposium 2023, Seoul, Korea",
     ],
     githubLink: "https://github.com/jiwnchoi/waltzboard",
+    videoDemoLink: "https://youtu.be/sNk_VAV3PAY",
   },
   {
     abbr: "intentable",
