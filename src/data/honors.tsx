@@ -1,5 +1,13 @@
 const en: CareerType[] = [
   {
+    title: "2024 Spring Shim-San Scholarship",
+    date: "Dec. 2023",
+    role: "",
+    url: "",
+    description:
+      "Selected as a recipient of the Shim-San Scholarship for the 2024 Spring by Dept. of CSE",
+  },
+  {
     title: "SKKU TA Award",
     date: "Jan. 2024",
     role: "",
@@ -7,7 +15,7 @@ const en: CareerType[] = [
     description: "Selected as one of the outstanding TAs (18 TAs on campus)",
   },
   {
-    title: "Shim-San Scholarship",
+    title: "2023 Fall Shim-San Scholarship",
     date: "Dec. 2023",
     role: "",
     url: "",
