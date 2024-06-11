@@ -1,7 +1,7 @@
 const en: CareerType[] = [
   {
     title: "2024 Spring Shim-San Scholarship",
-    date: "Dec. 2023",
+    date: "Jun. 2024",
     role: "",
     url: "",
     description:
@@ -116,6 +116,14 @@ const en: CareerType[] = [
 
 const ko: CareerType[] = [
   {
+    title: "2024학년도 봄학기 심산 장학금",
+    date: "2024년 6월",
+    role: "",
+    url: "",
+    description:
+      "성균관대학교 소프트웨어학과에서 2024년 봄학기 장학생으로 선정",
+  },
+  {
     title: "SKKU TA Award",
     date: "2024년 1월",
     role: "",
@@ -123,7 +131,7 @@ const ko: CareerType[] = [
     description: "최우수 TA로 선정 (교내 18명 수여)",
   },
   {
-    title: "심산 장학금",
+    title: "2023학년도 가을학기 심산 장학금",
     date: "2023년 12월",
     role: "",
     url: "",
