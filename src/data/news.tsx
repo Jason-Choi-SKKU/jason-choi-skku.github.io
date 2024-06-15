@@ -2,6 +2,7 @@ const en = [
   {
     date: "Jun. 2024",
     description: `"Bavisitter" has been accepted to IEEE VIS 2024! See you in Tampa!`
+  },
   {
     date: "Jan. 2024",
     description: `🏆 Honored to receive an outstanding TA award!`,
@@ -24,6 +25,7 @@ const ko = [
   {
     date: "2024년 6월",
     description: `Bavisitter가 정보 시각화 탑 티어 컨퍼런스 IEEE VIS에 개제 승인 되었습니다!`
+  },
   {
     date: "2024년 1월",
     description: `🏆 교내 최우수 TA에게 수여되는 SKKU TA Award를 수상했습니다!`,
