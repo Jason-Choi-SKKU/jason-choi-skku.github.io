@@ -4,9 +4,12 @@ export const publications: PubType[] = [
     title:
       "Bavisitter: Integrating Design Guidelines into Large Language Models for Visualization Authoring",
     authorNames: ["Jiwon Choi", "Jaeung Lee", "Jaemin Jo"],
-    venue: ["Preprint (Submitted to VIS 2024)"],
+    venue: [
+      "Proceedings of Conference on 2024 IEEE Visualization & Visual Analytics (IEEE VIS), Tampa Bay, USA",
+    ],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
     videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
+    
   },
   // {
   //   abbr: "waltzboard",
