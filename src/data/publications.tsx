@@ -29,6 +29,7 @@ export const publications: PubType[] = [
     githubLink: "https://github.com/jjmmwon/ProjectionEnsemble",
     videoDemoLink: "https://youtu.be/rgzyFg7mOfc",
     webDemoLink: "https://jjmmwon.github.io/ProjectionEnsemble/",
+    pdfLink: "https://ieeexplore.ieee.org/abstract/document/10360924/"
   },
   {
     abbr: "gleaner",
