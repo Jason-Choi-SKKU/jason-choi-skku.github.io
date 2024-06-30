@@ -4,7 +4,7 @@ const educations_en: CareerType[] = [
     role: "Master of Engineering in Computer Science and Engineering",
     location: "Suwon, South Korea",
     date: "Sep. 2023 - Present",
-    description: "GPA: 4.3/4.5",
+    description: "GPA: 4.31/4.5",
     url: "https://cse.skku.edu",
   },
   {
@@ -30,7 +30,7 @@ const educations_ko: CareerType[] = [
     role: "소프트웨어학과 석사과정 (2025년 2월 졸업 예정)",
     location: "수원, 대한민국",
     date: "2023년 9월 - 현재",
-    description: "학점: 4.3/4.5",
+    description: "학점: 4.31/4.5",
     url: "https://cse.skku.edu",
   },
   {
