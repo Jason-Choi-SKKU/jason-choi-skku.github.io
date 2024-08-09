@@ -27,8 +27,7 @@ const en: CareerType[] = [
     date: "Sep. 2023 - Aug. 2025",
     role: "",
     url: "",
-    description:
-      "Stipended of $7,000 per year for selected new graduate students in SKKU.",
+    description: "Stipended of $7,000 per year for selected new graduate students in SKKU.",
   },
   {
     title: "SPARCS Startup Hackathon",
@@ -59,8 +58,7 @@ const en: CareerType[] = [
     title: "2022 Graffiti Startup Hackathon",
     date: "Jan. 2022",
     location: "3rd Place",
-    description:
-      "Proposed research for data-driven startup improvement direction.",
+    description: "Proposed research for data-driven startup improvement direction.",
     url: "",
     role: "",
   },
@@ -120,8 +118,7 @@ const ko: CareerType[] = [
     date: "2024년 6월",
     role: "",
     url: "",
-    description:
-      "성균관대학교 소프트웨어학과에서 2024년 봄학기 장학생으로 선정",
+    description: "성균관대학교 소프트웨어학과에서 2024년 봄학기 장학생으로 선정",
   },
   {
     title: "SKKU TA Award",
@@ -135,8 +132,7 @@ const ko: CareerType[] = [
     date: "2023년 12월",
     role: "",
     url: "",
-    description:
-      "성균관대학교 소프트웨어학과에서 2023년 가을학기 장학생으로 선정",
+    description: "성균관대학교 소프트웨어학과에서 2023년 가을학기 장학생으로 선정",
   },
   {
     title: "성균관대학교 新대학원우수장학금",

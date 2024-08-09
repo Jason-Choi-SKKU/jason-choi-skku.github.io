@@ -1,5 +1,5 @@
-import teaser from "./intentable.png";
 import content from "./intentable.mdx";
+import teaser from "./intentable.png";
 
 const project: ProjectType = {
   abbr: "intentable",

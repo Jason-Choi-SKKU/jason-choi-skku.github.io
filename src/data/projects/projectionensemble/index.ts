@@ -1,11 +1,10 @@
-import teaser from "./projectionensemble.png";
 import content from "./projectionensemble.mdx";
+import teaser from "./projectionensemble.png";
 
 const project: ProjectType = {
   abbr: "projectionensemble",
   title: "Projection Ensemble",
-  description:
-    "Visualizing the Robust Structures of Multidimensional Projections",
+  description: "Visualizing the Robust Structures of Multidimensional Projections",
   teaser,
   content,
   selected: true,

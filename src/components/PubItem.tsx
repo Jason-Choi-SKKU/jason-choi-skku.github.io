@@ -1,33 +1,16 @@
 "use client";
 
 import { authors } from "@/data/authors";
-import {
-  Box,
-  Center,
-  Highlight,
-  Icon,
-  Link,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Center, Highlight, Icon, Link, ListItem, Text } from "@chakra-ui/react";
 
 import NextLink from "next/link";
-import {
-  FaFilePdf,
-  FaGithub,
-  FaGlobe,
-  FaVideo,
-  FaVolumeHigh,
-} from "react-icons/fa6";
+import { FaFilePdf, FaGithub, FaGlobe, FaVideo, FaVolumeHigh } from "react-icons/fa6";
 function AuthorNames({ authorNames }: { authorNames: string[] }) {
   return (
     <>
       {authorNames.map((author, index) => (
         <Text as="i" key={`authorNames${index}`}>
-          <Link
-            as={NextLink}
-            href={authors.find((a) => a.name === author)?.url || ""}
-          >
+          <Link as={NextLink} href={authors.find(a => a.name === author)?.url || ""}>
             <Text as="span" key={`author${index}`}>
               <Highlight
                 query={["Jiwon Choi"]}
@@ -35,8 +18,7 @@ function AuthorNames({ authorNames }: { authorNames: string[] }) {
                   backgroundColor: "none",
                   padding: 0,
                   textDecoration: "underline",
-                }}
-              >
+                }}>
                 {author}
               </Highlight>
             </Text>
@@ -47,8 +29,8 @@ function AuthorNames({ authorNames }: { authorNames: string[] }) {
                 ? " and "
                 : ", and "
               : index === authorNames.length - 1
-              ? ""
-              : ", "}
+                ? ""
+                : ", "}
           </Text>
         </Text>
       ))}

@@ -1,10 +1,7 @@
-import PubItem from "@/components/PubItem";
-import { publications } from "@/data";
 import {
   Badge,
   Flex,
   Heading,
-  List,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -14,7 +11,7 @@ import {
   Portal,
   Text,
 } from "@chakra-ui/react";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 interface IProjectModal {
   project: ProjectType;
@@ -31,12 +28,7 @@ function ProjectModal({
   children,
 }: PropsWithChildren<IProjectModal>) {
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      size={"4xl"}
-      scrollBehavior="inside"
-    >
+    <Modal isOpen={isOpen} onClose={onClose} size={"4xl"} scrollBehavior="inside">
       <ModalOverlay />
       <Portal>
         <ModalContent mx={4}>
@@ -46,10 +38,7 @@ function ProjectModal({
             </Heading>
             <Text fontSize="sm">{description}</Text>
             <Flex>
-              <Badge
-                size={"xs"}
-                colorScheme={type === "research" ? "orange" : "blue"}
-              >
+              <Badge size={"xs"} colorScheme={type === "research" ? "orange" : "blue"}>
                 {type}
               </Badge>
               {date && (

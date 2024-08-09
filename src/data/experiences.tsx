@@ -30,8 +30,7 @@ export const en: CareerType[] = [
     role: "Lecturer, Dept. of Applied AI",
     location: "Seoul, South Korea",
     date: "Aug. 2023",
-    description:
-      "Lectured on the topic of web development and open-source software.",
+    description: "Lectured on the topic of web development and open-source software.",
     url: "https://aai.skku.edu",
   },
 ];
@@ -50,8 +49,7 @@ export const ko: CareerType[] = [
     role: "소프트웨어 엔지니어 인턴 (nBilly @ ETECH Smart Studio)",
     location: "성남, 대한민국",
     date: "2024년 1월 - 2024년 2월",
-    description:
-      "딥러닝 및 강화학습 기반 웹 페이지 색상 추천 및 할당 모듈 개발",
+    description: "딥러닝 및 강화학습 기반 웹 페이지 색상 추천 및 할당 모듈 개발",
     url: "https://www.navercorp.com",
   },
   {

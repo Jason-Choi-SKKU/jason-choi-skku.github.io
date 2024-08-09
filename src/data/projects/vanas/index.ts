@@ -1,5 +1,5 @@
-import teaser from "./vanas.png";
 import content from "./vanas.mdx";
+import teaser from "./vanas.png";
 
 const project: ProjectType = {
   abbr: "vanas",

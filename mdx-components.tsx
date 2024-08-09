@@ -70,8 +70,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         pt={2}
         pb={4}
         px={4}
-        mb={8}
-      >
+        mb={8}>
         {children}
       </Box>
     ),

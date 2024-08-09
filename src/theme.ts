@@ -1,9 +1,5 @@
-import {
-  defineStyleConfig,
-  extendTheme,
-  withDefaultColorScheme,
-} from "@chakra-ui/react";
-import { StyleFunctionProps, mode } from "@chakra-ui/theme-tools";
+import { defineStyleConfig, extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import { type StyleFunctionProps, mode } from "@chakra-ui/theme-tools";
 
 export const PRIMARY_COLOR = "orange";
 export const PRIMARY = {
@@ -58,7 +54,7 @@ export const theme = extendTheme(
     },
     components: {
       Card: defineStyleConfig({
-        baseStyle: (props) => ({
+        baseStyle: props => ({
           display: "flex",
           flexDir: "column",
           borderRadius: 16,
@@ -69,12 +65,12 @@ export const theme = extendTheme(
         }),
       }),
       Heading: defineStyleConfig({
-        baseStyle: (props) => ({
+        baseStyle: props => ({
           color: mode(PRIMARY[500], PRIMARY[200])(props),
         }),
       }),
       Mark: defineStyleConfig({
-        baseStyle: (props) => ({
+        baseStyle: props => ({
           bgColor: mode(PRIMARY[100], PRIMARY[900])(props),
           color: mode(PRIMARY[600], PRIMARY[100])(props),
           fontWeight: 600,
@@ -84,5 +80,5 @@ export const theme = extendTheme(
       }),
     },
   },
-  withDefaultColorScheme({ colorScheme: PRIMARY_COLOR })
+  withDefaultColorScheme({ colorScheme: PRIMARY_COLOR }),
 );

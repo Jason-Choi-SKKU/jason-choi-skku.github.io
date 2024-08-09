@@ -12,7 +12,7 @@ export const useLayoutScroll = () => {
 
   useEffect(() => {
     const handleScroll = throttle(() => {
-      const sectionIdx = sectionRef.current.findIndex((ref) => {
+      const sectionIdx = sectionRef.current.findIndex(ref => {
         if (!ref) return false;
         const rect = ref.getBoundingClientRect();
         return (rect.top + rect.bottom) / 2 > 56;
@@ -55,16 +55,12 @@ export const useLayoutScroll = () => {
   useEffect(() => {
     setIsDesktop(
       window.innerWidth >
-        parseFloat(getComputedStyle(document.querySelector("body")!).fontSize) *
-          48
+        Number.parseFloat(getComputedStyle(document.querySelector("body")!).fontSize) * 48,
     );
     window.addEventListener("resize", () => {
       setIsDesktop(
         window.innerWidth >
-          parseFloat(
-            getComputedStyle(document.querySelector("body")!).fontSize
-          ) *
-            48
+          Number.parseFloat(getComputedStyle(document.querySelector("body")!).fontSize) * 48,
       );
     });
   }, []);

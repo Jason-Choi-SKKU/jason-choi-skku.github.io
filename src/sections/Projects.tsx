@@ -2,14 +2,7 @@
 
 import { ProjectCard } from "@/components";
 import { projects } from "@/data";
-import {
-  Button,
-  Flex,
-  Heading,
-  Icon,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { Button, Flex, Heading, Icon, SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaExpand } from "react-icons/fa6";
 
@@ -28,11 +21,8 @@ export default function Projects({ locale }: { locale: Language }) {
         <Button
           size={"sm"}
           variant={"ghost"}
-          leftIcon={
-            projectExpanded ? <Icon as={FaExpand} /> : <Icon as={FaExpand} />
-          }
-          onClick={() => setProjectExpanded(!projectExpanded)}
-        >
+          leftIcon={projectExpanded ? <Icon as={FaExpand} /> : <Icon as={FaExpand} />}
+          onClick={() => setProjectExpanded(!projectExpanded)}>
           {projectExpanded ? "View Selected" : "View All"}
         </Button>
       </Flex>
@@ -46,7 +36,7 @@ export default function Projects({ locale }: { locale: Language }) {
         ) : (
           <Flex gap={4} overflowX="scroll" pb={4}>
             {projectData
-              .filter((item) => item.selected)
+              .filter(item => item.selected)
               .map((item, index) => (
                 <ProjectCard item={item} key={`project${index}`} />
               ))}

@@ -1,7 +1,7 @@
 const en = [
   {
     date: "Jun. 2024",
-    description: `"Bavisitter" has been accepted to IEEE VIS 2024! See you in Tampa!`
+    description: `"Bavisitter" has been accepted to IEEE VIS 2024! See you in Tampa!`,
   },
   {
     date: "Jan. 2024",
@@ -24,7 +24,7 @@ const en = [
 const ko = [
   {
     date: "2024년 6월",
-    description: `Bavisitter가 정보 시각화 탑 티어 컨퍼런스 IEEE VIS에 개제 승인 되었습니다!`
+    description: `Bavisitter가 정보 시각화 탑 티어 컨퍼런스 IEEE VIS에 개제 승인 되었습니다!`,
   },
   {
     date: "2024년 1월",

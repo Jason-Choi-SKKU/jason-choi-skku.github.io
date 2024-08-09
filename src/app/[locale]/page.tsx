@@ -1,5 +1,5 @@
 import { Main } from "@/components";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Jiwon Jason Choi 최지원 ",

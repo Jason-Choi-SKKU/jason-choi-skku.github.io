@@ -1,5 +1,5 @@
-import teaser from "./vacode.png";
 import content from "./vacode.mdx";
+import teaser from "./vacode.png";
 
 const project: ProjectType = {
   abbr: "vacode",

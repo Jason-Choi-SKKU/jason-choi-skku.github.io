@@ -9,7 +9,6 @@ export const publications: PubType[] = [
     ],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
     videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
-    
   },
   // {
   //   abbr: "waltzboard",
@@ -20,8 +19,7 @@ export const publications: PubType[] = [
   // },
   {
     abbr: "projectionensemble",
-    title:
-      "Projection Ensemble: Visualizing the Robust Structures of Multidimensional Projections",
+    title: "Projection Ensemble: Visualizing the Robust Structures of Multidimensional Projections",
     authorNames: ["Myeongwon Jung", "Jiwon Choi", "Jaemin Jo"],
     venue: [
       "Proceedings of Conference on 2023 IEEE Visualization & Visual Analytics (IEEE VIS), Melbourn, Australia",
@@ -29,7 +27,7 @@ export const publications: PubType[] = [
     githubLink: "https://github.com/jjmmwon/ProjectionEnsemble",
     videoDemoLink: "https://youtu.be/rgzyFg7mOfc",
     webDemoLink: "https://jjmmwon.github.io/ProjectionEnsemble/",
-    pdfLink: "https://ieeexplore.ieee.org/abstract/document/10360924/"
+    pdfLink: "https://ieeexplore.ieee.org/abstract/document/10360924/",
   },
   {
     abbr: "gleaner",
@@ -44,8 +42,7 @@ export const publications: PubType[] = [
   },
   {
     abbr: "intentable",
-    title:
-      "Intentable: A Mixed-Initiative System for Intent-Based Chart Captioning",
+    title: "Intentable: A Mixed-Initiative System for Intent-Based Chart Captioning",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
     venue: [
       "Proceedings of Conference on 2022 IEEE Visualization & Visual Analytics (IEEE VIS), Oklahoma City, USA",

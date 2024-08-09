@@ -1,11 +1,4 @@
-import {
-  Flex,
-  FlexProps,
-  Highlight,
-  Link,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
+import { Flex, type FlexProps, Highlight, Link, ListItem, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 type CareerItemProps = {
@@ -15,11 +8,7 @@ type CareerItemProps = {
 
 export default function CareerItem(props: CareerItemProps, key: string) {
   return (
-    <ListItem
-      key={key}
-      display={"flex"}
-      flexDir={{ base: "column", md: "row" }}
-    >
+    <ListItem key={key} display={"flex"} flexDir={{ base: "column", md: "row" }}>
       <Text
         fontSize={"xs"}
         minW={"80px"}
@@ -27,8 +16,7 @@ export default function CareerItem(props: CareerItemProps, key: string) {
           base: "100%",
           md: "80px",
         }}
-        py={0.5}
-      >
+        py={0.5}>
         <Highlight query={["Present", "현재"]}>{props.career.date}</Highlight>
       </Text>
 

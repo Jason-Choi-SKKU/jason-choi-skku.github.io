@@ -1,4 +1,4 @@
-import { Box, CardProps, useStyleConfig } from "@chakra-ui/react";
+import { Box, type CardProps, useStyleConfig } from "@chakra-ui/react";
 
 export default function Card(props: CardProps) {
   const { variant, ...rest } = props;

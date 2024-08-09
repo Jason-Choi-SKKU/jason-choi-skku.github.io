@@ -1,19 +1,9 @@
-import {
-  Badge,
-  Box,
-  Flex,
-  Text,
-  useColorMode,
-  useDisclosure,
-} from "@chakra-ui/react";
+import Card from "@/components/Card";
+import { Badge, Box, Flex, Text, useColorMode, useDisclosure } from "@chakra-ui/react";
 import Image from "next/image";
 import ProjectModal from "./ProjectModal";
-import Card from "@/components/Card";
 
-export default function ProjectCard(
-  { item }: { item: ProjectType },
-  key: string
-) {
+export default function ProjectCard({ item }: { item: ProjectType }, key: string) {
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -30,8 +20,7 @@ export default function ProjectCard(
       onClick={onOpen}
       _hover={{
         cursor: "pointer",
-      }}
-    >
+      }}>
       <Box h={100} w={"full"} position={"relative"} overflow={"hidden"}>
         <Image
           fill
@@ -44,10 +33,7 @@ export default function ProjectCard(
       </Box>
       <Box px={2} pb={2}>
         <Flex>
-          <Badge
-            size={"xs"}
-            colorScheme={item.type === "research" ? "orange" : "blue"}
-          >
+          <Badge size={"xs"} colorScheme={item.type === "research" ? "orange" : "blue"}>
             {item.type}
           </Badge>
           {item.date && (
@@ -61,12 +47,7 @@ export default function ProjectCard(
         </Text>
         <Text fontSize={"xs"}>{item.description}</Text>
       </Box>
-      <ProjectModal
-        project={item}
-        isOpen={isOpen}
-        onClose={onClose}
-        onOpen={onOpen}
-      >
+      <ProjectModal project={item} isOpen={isOpen} onClose={onClose} onOpen={onOpen}>
         <item.content />
       </ProjectModal>
     </Card>

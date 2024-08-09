@@ -1,10 +1,10 @@
 import {
-  FaGithub,
-  FaLinkedin,
   FaEnvelope,
-  FaXTwitter,
-  FaInstagram,
+  FaGithub,
   FaGraduationCap,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
 } from "react-icons/fa6";
 
 export const socials = [

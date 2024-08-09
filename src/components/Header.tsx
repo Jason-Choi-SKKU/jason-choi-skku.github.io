@@ -11,13 +11,8 @@ export default function Header({ aboutData }: { aboutData: AboutType }) {
       flexDir={{ base: "row", md: "column" }}
       alignItems={{ base: "flex-start", md: "center" }}
       gap={4}
-      p={4}
-    >
-      <Box
-        w={{ base: "100px", md: "120px" }}
-        overflow={"hidden"}
-        borderRadius={"100%"}
-      >
+      p={4}>
+      <Box w={{ base: "100px", md: "120px" }} overflow={"hidden"} borderRadius={"100%"}>
         <Image
           width={120}
           height={120}
@@ -36,8 +31,7 @@ export default function Header({ aboutData }: { aboutData: AboutType }) {
           align={{
             base: "flex-start",
             md: "center",
-          }}
-        >
+          }}>
           <Text fontWeight={700} fontSize={24}>
             {aboutData.name}
           </Text>
@@ -48,9 +42,8 @@ export default function Header({ aboutData }: { aboutData: AboutType }) {
           w={"full"}
           orientation={"horizontal"}
           justifyContent={{ base: "left", md: "space-evenly" }}
-          display={"flex"}
-        >
-          {socials.map((social) => (
+          display={"flex"}>
+          {socials.map(social => (
             <SocialButton key={social.href} {...social} />
           ))}
         </List>
