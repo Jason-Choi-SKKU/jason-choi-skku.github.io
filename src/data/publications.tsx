@@ -10,6 +10,8 @@ export const publications: PubType[] = [
     githubLink: "https://github.com/jiwnchoi/bavisitter",
     videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
     pdfLink: "https://github.com/jiwnchoi/Bavisitter/blob/main/assets/bavisitter.pdf",
+    webDemoLink:
+      "https://colab.research.google.com/github/jiwnchoi/Bavisitter/blob/main/demo.ipynb",
   },
   // {
   //   abbr: "waltzboard",
