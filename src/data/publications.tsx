@@ -9,6 +9,7 @@ export const publications: PubType[] = [
     ],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
     videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
+    pdfLink: "https://github.com/jiwnchoi/Bavisitter/blob/main/assets/bavisitter.pdf",
   },
   // {
   //   abbr: "waltzboard",
@@ -64,4 +65,4 @@ export const publications: PubType[] = [
     videoDemoLink: "https://www.youtube.com/watch?v=RCJoIZSVb2A",
     talkLink: "https://www.youtube.com/watch?v=XYCcoi4L1oU",
   },
-];
+]

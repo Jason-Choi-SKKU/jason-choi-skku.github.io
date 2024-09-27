@@ -1,0 +1,28 @@
+import { Center, List } from "@chakra-ui/react";
+import img from "./swipytics.png";
+import Image from "next/image";
+import { PubItem } from "@/components";
+import { publications } from "@/data";
+
+<Center w="full" mb={4}>
+  <Image
+    width={1000}
+    src={img}
+    alt={"Swipytics"}
+    style={{ objectFit: "cover" }}
+    placeholder="blur"
+  />
+</Center>
+
+{/* ## Abstract
+
+We introduce Projection Ensemble, a novel approach for identifying and visualizing robust structures across multidimensional projections. Although multidimensional projections, such as t-Stochastic Neighbor Embedding (t-SNE), have gained popularity, their stochastic nature often leads the user to interpret the structures that arise by chance and make erroneous findings. To overcome this limitation, we present a frequent subgraph mining algorithm and a visualization interface to extract and visualize the consistent structures across multiple projections. We demonstrate that our system not only identifies trustworthy structures but also detects accidental clustering or separation of data points.
+
+<br />
+## References
+
+<List>
+  <PubItem
+    pub={publications.find((pub) => pub.abbr === "projectionensemble")}
+  />
+</List> */}
