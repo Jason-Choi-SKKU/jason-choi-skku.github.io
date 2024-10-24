@@ -5,7 +5,7 @@ export const publications: PubType[] = [
       "Bavisitter: Integrating Design Guidelines into Large Language Models for Visualization Authoring",
     authorNames: ["Jiwon Choi", "Jaeung Lee", "Jaemin Jo"],
     venue: [
-      "Proceedings of Conference on 2024 IEEE Visualization & Visual Analytics (IEEE VIS), Tampa Bay, USA",
+      "Proceedings of Conference on 2024 IEEE Visualization (IEEE VIS), Tampa Bay, USA",
     ],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
     videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
@@ -25,7 +25,7 @@ export const publications: PubType[] = [
     title: "Projection Ensemble: Visualizing the Robust Structures of Multidimensional Projections",
     authorNames: ["Myeongwon Jung", "Jiwon Choi", "Jaemin Jo"],
     venue: [
-      "Proceedings of Conference on 2023 IEEE Visualization & Visual Analytics (IEEE VIS), Melbourn, Australia",
+      "Proceedings of Conference on 2023 IEEE Visualization (IEEE VIS), Melbourn, Australia",
     ],
     githubLink: "https://github.com/jjmmwon/ProjectionEnsemble",
     videoDemoLink: "https://youtu.be/rgzyFg7mOfc",
@@ -48,7 +48,7 @@ export const publications: PubType[] = [
     title: "Intentable: A Mixed-Initiative System for Intent-Based Chart Captioning",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
     venue: [
-      "Proceedings of Conference on 2022 IEEE Visualization & Visual Analytics (IEEE VIS), Oklahoma City, USA",
+      "Proceedings of Conference on 2022 IEEE Visualization (IEEE VIS), Oklahoma City, USA",
     ],
     pdfLink:
       "https://github.com/jiwnchoi/Intentable/files/9109841/Intentable_A.Mixed-Initiative.System.for.Intent-Based.Chart.Captioning.pdf",
