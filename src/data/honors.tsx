@@ -1,5 +1,14 @@
 const en: CareerType[] = [
   {
+    title: "2024 Korea Visualization Workshop",
+    location: "Organizer",
+    date: "Oct. 2024",
+    role: "",
+    url: "",
+    description:
+      "Organized the 2024 Korea Visualization Workshop, the largest visualization academic event in Korea",
+  },
+  {
     title: "2024 Spring Shim-San Scholarship",
     date: "Jun. 2024",
     role: "",
@@ -28,6 +37,14 @@ const en: CareerType[] = [
     role: "",
     url: "",
     description: "Stipended of $7,000 per year for selected new graduate students in SKKU.",
+  },
+  {
+    title: "2023 IEEE Pacific Visualization Symposium",
+    date: "Apr. 2023",
+    location: "Student Volunteer",
+    description: "Volunteered at the PacificVis 2023, the international visualization conference",
+    url: "",
+    role: "",
   },
   {
     title: "SPARCS Startup Hackathon",
@@ -110,9 +127,18 @@ const en: CareerType[] = [
     url: "",
     role: "",
   },
-];
+]
 
 const ko: CareerType[] = [
+  {
+    title: "2024 제 2회 Korea Visualization Workshop",
+    location: "Organizer",
+    date: "2024년 10월",
+    role: "",
+    url: "",
+    description:
+      "국내 정보 시각화 분야 최대 규모 학술 행사인 Korea Visualization Workshop의 Organizer로 활동",
+  },
   {
     title: "2024학년도 봄학기 심산 장학금",
     date: "2024년 6월",
@@ -140,6 +166,14 @@ const ko: CareerType[] = [
     role: "",
     url: "",
     description: "성균관대학교 新대학원우수장학금 수혜자로 선정 (반액 장학금)",
+  },
+  {
+    title: "2023 IEEE Pacific Visualization Symposium",
+    date: "2023년 4월",
+    location: "Student Volunteer",
+    description: "국제 정보 시각화 학회 PacificVis 2023의 Student Volunteer로 활동",
+    role: "",
+    url: "",
   },
   {
     title: "제 1회 KAIST SPARCS 스타트업 해커톤",
@@ -221,9 +255,9 @@ const ko: CareerType[] = [
     url: "",
     role: "",
   },
-];
+]
 
 export const honors: I18nData = {
   en,
   ko,
-};
+}
