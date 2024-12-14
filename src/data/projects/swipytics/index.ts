@@ -3,12 +3,12 @@ import teaser from "./swipytics.png"
 const project: ProjectType = {
   abbr: "swipytics",
   title: "Swipytics",
-  description: "Novice-friendly Exploratory Visual Analysis with Sequential Recommendaiton",
+  description: "Learnable Visual Data Exploration for Novices",
   teaser,
   content,
   selected: true,
   type: "research",
-  date: "2024.08 ~ Current",
+  date: "2024.08 ~ 12",
 }
 
 export default project

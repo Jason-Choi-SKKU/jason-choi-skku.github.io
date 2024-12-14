@@ -1,14 +1,22 @@
 export const publications: PubType[] = [
   {
+    abbr: "swipytics",
+    title: "Swipytics: Learnable Visual Data Exploration for Novices",
+    authorNames: ["Jiwon Choi", "Sehi L'Yi", "Seojin Kim", "Jaemin Jo"],
+    venue: ["Preprint (Under-review)"],
+    githubLink: "https://github.com/jiwnchoi/swipytics",
+    videoDemoLink: "https://youtube.com/shorts/MrYS-1VKtUM",
+    // pdfLink: "https://github.com/jiwnchoi/Bavisitter/blob/main/assets/bavisitter.pdf",
+    webDemoLink: "https://jiwnchoi.github.io/Swipytics/",
+  },
+  {
     abbr: "bavisitter",
     title:
       "Bavisitter: Integrating Design Guidelines into Large Language Models for Visualization Authoring",
     authorNames: ["Jiwon Choi", "Jaeung Lee", "Jaemin Jo"],
-    venue: [
-      "Proceedings of Conference on 2024 IEEE Visualization (IEEE VIS), Tampa Bay, USA",
-    ],
+    venue: ["Proceedings of Conference on 2024 IEEE Visualization (IEEE VIS), Tampa Bay, USA"],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
-    videoDemoLink: "https://youtu.be/9rx1LRTMxwU?si=crU01yu4oo5wkvxE",
+    videoDemoLink: "https://youtu.be/AuRkGbia3yQ",
     pdfLink: "https://github.com/jiwnchoi/Bavisitter/blob/main/assets/bavisitter.pdf",
     webDemoLink:
       "https://colab.research.google.com/github/jiwnchoi/Bavisitter/blob/main/demo.ipynb",
@@ -24,16 +32,14 @@ export const publications: PubType[] = [
     abbr: "projectionensemble",
     title: "Projection Ensemble: Visualizing the Robust Structures of Multidimensional Projections",
     authorNames: ["Myeongwon Jung", "Jiwon Choi", "Jaemin Jo"],
-    venue: [
-      "Proceedings of Conference on 2023 IEEE Visualization (IEEE VIS), Melbourn, Australia",
-    ],
+    venue: ["Proceedings of Conference on 2023 IEEE Visualization (IEEE VIS), Melbourn, Australia"],
     githubLink: "https://github.com/jjmmwon/ProjectionEnsemble",
     videoDemoLink: "https://youtu.be/rgzyFg7mOfc",
     webDemoLink: "https://jjmmwon.github.io/ProjectionEnsemble/",
     pdfLink: "https://ieeexplore.ieee.org/abstract/document/10360924/",
   },
   {
-    abbr: "gleaner",
+    abbr: "waltzboard",
     title: "Multi-Criteria Optimization for Automatic Dashboard Design",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
     venue: [
@@ -41,15 +47,13 @@ export const publications: PubType[] = [
       "Invited to IEEE Pacific Visualization Symposium 2023, Seoul, Korea",
     ],
     githubLink: "https://github.com/jiwnchoi/waltzboard",
-    videoDemoLink: "https://youtu.be/sNk_VAV3PAY",
+    videoDemoLink: "https://youtu.be/fOweAPS-lz4",
   },
   {
     abbr: "intentable",
     title: "Intentable: A Mixed-Initiative System for Intent-Based Chart Captioning",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
-    venue: [
-      "Proceedings of Conference on 2022 IEEE Visualization (IEEE VIS), Oklahoma City, USA",
-    ],
+    venue: ["Proceedings of Conference on 2022 IEEE Visualization (IEEE VIS), Oklahoma City, USA"],
     pdfLink:
       "https://github.com/jiwnchoi/Intentable/files/9109841/Intentable_A.Mixed-Initiative.System.for.Intent-Based.Chart.Captioning.pdf",
     githubLink: "https://github.com/jiwnchoi/Intentable",

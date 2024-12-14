@@ -1,8 +1,8 @@
-import { Center, List } from "@chakra-ui/react";
-import img from "./swipytics.png";
-import Image from "next/image";
-import { PubItem } from "@/components";
-import { publications } from "@/data";
+import { Center, List } from "@chakra-ui/react"
+import img from "./swipytics.png"
+import Image from "next/image"
+import { PubItem } from "@/components"
+import { publications } from "@/data"
 
 <Center w="full" mb={4}>
   <Image
@@ -14,15 +14,22 @@ import { publications } from "@/data";
   />
 </Center>
 
-{/* ## Abstract
+## Abstract
 
-We introduce Projection Ensemble, a novel approach for identifying and visualizing robust structures across multidimensional projections. Although multidimensional projections, such as t-Stochastic Neighbor Embedding (t-SNE), have gained popularity, their stochastic nature often leads the user to interpret the structures that arise by chance and make erroneous findings. To overcome this limitation, we present a frequent subgraph mining algorithm and a visualization interface to extract and visualize the consistent structures across multiple projections. We demonstrate that our system not only identifies trustworthy structures but also detects accidental clustering or separation of data points.
+We present Swipytics, a novel exploratory data analysis interface designed for visual analytics
+novices. While exploratory data analysis has become pervasive, engaging a broad and diverse
+audience, the cognitive complexity of choosing data attributes and constructing visualizations
+remains a significant barrier for novices. To fill the gap, we present a learnable mobile interface,
+Swipytics. Leveraging the metaphor of short-form video streams, Swipytics offers minimal and
+familiar user interactions, such as swipe gestures for exploring new visualizations. We alleviate
+the information overload by recommending visualizations at a linear and controllable pace. Our user
+study demonstrates that novices quickly achieved high levels of proficiency and confidence in visual
+data exploration after a short self-learning period (a hundred seconds on average) without any
+tutorial or verbal guidance.
 
 <br />
 ## References
 
 <List>
-  <PubItem
-    pub={publications.find((pub) => pub.abbr === "projectionensemble")}
-  />
-</List> */}
+  <PubItem pub={publications.find((pub) => pub.abbr === "swipytics")} />
+</List>
