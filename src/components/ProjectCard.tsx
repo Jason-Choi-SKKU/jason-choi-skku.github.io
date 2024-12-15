@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import type { ProjectType } from "@/types";
 import { Badge, Box, Flex, Text, useColorMode, useDisclosure } from "@chakra-ui/react";
 import Image from "next/image";
 import ProjectModal from "./ProjectModal";

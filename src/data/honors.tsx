@@ -1,3 +1,5 @@
+import type { CareerType, I18nData } from "@/types";
+
 const en: CareerType[] = [
   {
     title: "2024 Korea Visualization Workshop",
@@ -127,7 +129,7 @@ const en: CareerType[] = [
     url: "",
     role: "",
   },
-]
+];
 
 const ko: CareerType[] = [
   {
@@ -255,9 +257,9 @@ const ko: CareerType[] = [
     url: "",
     role: "",
   },
-]
+];
 
-export const honors: I18nData = {
+export const honors: I18nData<CareerType[]> = {
   en,
   ko,
-}
+};

@@ -1,3 +1,5 @@
+import type { AuthorType } from "@/types";
+
 export const authors: AuthorType[] = [
   {
     name: "Jiwon Choi",
@@ -17,5 +19,13 @@ export const authors: AuthorType[] = [
   {
     name: "Jaeung Lee",
     url: "https://github.com/gnueaj",
+  },
+  {
+    name: "Sehi L'Yi",
+    url: "https://sehilyi.com/",
+  },
+  {
+    name: "Seojin Kim",
+    url: "https://www.linkedin.com/in/%EC%84%9C%EC%A7%84-%EA%B9%80-0363aa259/",
   },
 ];

@@ -1,3 +1,4 @@
+import type { ProjectType } from "@/types";
 import {
   Badge,
   Flex,
@@ -21,10 +22,9 @@ interface IProjectModal {
 }
 
 function ProjectModal({
-  project: { title, description, type, abbr, date },
+  project: { title, description, type, date },
   isOpen,
   onClose,
-  onOpen,
   children,
 }: PropsWithChildren<IProjectModal>) {
   return (

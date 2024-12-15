@@ -1,10 +1,11 @@
 "use client";
 
 import { news } from "@/data";
+import type { Language, NewsType } from "@/types";
 import { Flex, Heading, List, ListItem, Text } from "@chakra-ui/react";
 
 export function News({ locale }: { locale: Language }) {
-  const newsData = news[locale as Language] as NewsType[];
+  const newsData = news[locale] as NewsType[];
 
   return (
     <Flex flexDir={"column"} gap={4}>

@@ -14,7 +14,9 @@ export const publications: PubType[] = [
     title:
       "Bavisitter: Integrating Design Guidelines into Large Language Models for Visualization Authoring",
     authorNames: ["Jiwon Choi", "Jaeung Lee", "Jaemin Jo"],
-    venue: ["Proceedings of Conference on 2024 IEEE Visualization & Visual Analytics (IEEE VIS), Tampa Bay, USA"],
+    venue: [
+      "Proceedings of Conference on 2024 IEEE Visualization & Visual Analytics (IEEE VIS), Tampa Bay, USA",
+    ],
     githubLink: "https://github.com/jiwnchoi/bavisitter",
     videoDemoLink: "https://youtu.be/AuRkGbia3yQ",
     pdfLink: "https://github.com/jiwnchoi/Bavisitter/blob/main/assets/bavisitter.pdf",
@@ -32,7 +34,9 @@ export const publications: PubType[] = [
     abbr: "projectionensemble",
     title: "Projection Ensemble: Visualizing the Robust Structures of Multidimensional Projections",
     authorNames: ["Myeongwon Jung", "Jiwon Choi", "Jaemin Jo"],
-    venue: ["Proceedings of Conference on 2023 IEEE Visualization & Visual Analytics (IEEE VIS), Melbourn, Australia"],
+    venue: [
+      "Proceedings of Conference on 2023 IEEE Visualization & Visual Analytics (IEEE VIS), Melbourn, Australia",
+    ],
     githubLink: "https://github.com/jjmmwon/ProjectionEnsemble",
     videoDemoLink: "https://youtu.be/rgzyFg7mOfc",
     webDemoLink: "https://jjmmwon.github.io/ProjectionEnsemble/",
@@ -53,7 +57,9 @@ export const publications: PubType[] = [
     abbr: "intentable",
     title: "Intentable: A Mixed-Initiative System for Intent-Based Chart Captioning",
     authorNames: ["Jiwon Choi", "Jaemin Jo"],
-    venue: ["Proceedings of Conference on 2022 IEEE Visualization & Visual Analytics (IEEE VIS), Oklahoma City, USA"],
+    venue: [
+      "Proceedings of Conference on 2022 IEEE Visualization & Visual Analytics (IEEE VIS), Oklahoma City, USA",
+    ],
     pdfLink:
       "https://github.com/jiwnchoi/Intentable/files/9109841/Intentable_A.Mixed-Initiative.System.for.Intent-Based.Chart.Captioning.pdf",
     githubLink: "https://github.com/jiwnchoi/Intentable",
@@ -71,4 +77,4 @@ export const publications: PubType[] = [
     videoDemoLink: "https://www.youtube.com/watch?v=RCJoIZSVb2A",
     talkLink: "https://www.youtube.com/watch?v=XYCcoi4L1oU",
   },
-]
+];

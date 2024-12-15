@@ -8,7 +8,13 @@ interface NavigationProps {
   sectionHandler: (idx: number) => void;
   currentSection: number;
 }
-const NavigationItem = (props: any) => (
+interface NavigationItemProps {
+  selected: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+const NavigationItem = (props: NavigationItemProps) => (
   <Button
     size={{ base: "xs", sm: "sm", md: "md" }}
     justifyContent={{ base: "center", md: "flex-start" }}
@@ -45,7 +51,6 @@ export default function Navigation({ isOpen, sectionHandler, currentSection }: N
           justifyContent={{ base: "space-between", md: "flex-start" }}>
           {navigations.map((navigation, idx) => (
             <NavigationItem
-              id={navigation.href}
               selected={idx === currentSection}
               key={`sect${idx}`}
               onClick={() => sectionHandler(idx)}>

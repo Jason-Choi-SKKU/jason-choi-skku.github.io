@@ -1,4 +1,5 @@
 import { BioEn, BioKo, ProfileImage } from "@/data/bio";
+import type { AboutType, I18nData } from "@/types";
 
 const en: AboutType = {
   name: "Jiwon Choi",
@@ -18,4 +19,4 @@ const ko: AboutType = {
   profileImage: ProfileImage,
 };
 
-export const about = { en, ko };
+export const about: I18nData<AboutType> = { en, ko };

@@ -1,4 +1,8 @@
-type CareerType = {
+import type { FlexProps } from "@chakra-ui/react";
+import type { MDXContent } from "mdx/types";
+import type { StaticImageData } from "next/image";
+
+export type CareerType = {
   title: string;
   role: string;
   date: string;
@@ -7,7 +11,7 @@ type CareerType = {
   description?: string;
 };
 
-type PubType = {
+export type PubType = {
   abbr: string;
   title: string;
   authorNames: string[];
@@ -19,18 +23,14 @@ type PubType = {
   talkLink?: string;
 };
 
-type MDXContent = import("mdx/types").MDXContent;
+export type EntityType = CareerType | PubType;
 
-type StaticImageData = import("next/image").StaticImageData;
-
-type EntityType = CareerType | PubType;
-
-type AuthorType = {
+export type AuthorType = {
   name: string;
   url?: string;
 };
 
-type AboutType = {
+export type AboutType = {
   name: string;
   description: string;
   pageTitle: string;
@@ -39,20 +39,18 @@ type AboutType = {
   profileImage: StaticImageData;
 };
 
-type Language = "en" | "ko";
+export type Language = "en" | "ko";
 
-type I18nData = {
-  [key in Language]?: any;
-} & {
-  en: any;
+export type I18nData<T> = Partial<Record<Language, T>> & {
+  en: T;
 };
 
-type NewsType = {
+export type NewsType = {
   date: string;
   description: string;
 };
 
-type ProjectType = {
+export type ProjectType = {
   title: string;
   description: string;
   teaser: StaticImageData;
@@ -63,6 +61,6 @@ type ProjectType = {
   date?: string;
 };
 
-type FlexWithLanguageProps = {
+export type FlexWithLanguageProps = {
   locale: Language;
-} & import("@chakra-ui/react").FlexProps;
+} & FlexProps;
