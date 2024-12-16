@@ -1,3 +1,4 @@
+import type { CareerType } from "@/types";
 import { Flex, type FlexProps, Highlight, Link, ListItem, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 
